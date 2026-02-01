@@ -1,0 +1,4 @@
+﻿batch_ts,host,sql_file,status,issues,params_used,params_missing
+20260201_212718,host1,a1.sql,OK,,clsYymm,
+20260201_212718,host1,a2.sql,OK,,clsYymm,
+20260201_212718,host1,rate.sql,OK,,,
