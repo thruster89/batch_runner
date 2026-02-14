@@ -1,0 +1,264 @@
+[2026-02-10 23:31:02,710] [INFO] Batch started
+[2026-02-10 23:31:02,710] [INFO] RUN_MODE=ALL
+[2026-02-10 23:31:02,712] [INFO] HOSTS override: ['local']
+[2026-02-10 23:31:02,712] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:31:02,712] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:31:02,713] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:31:02,713] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:31:02,729] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:31:02,730] [INFO] Oracle client mode: thick
+[2026-02-10 23:31:02,822] [INFO] PARQUET OK | A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.08s
+[2026-02-10 23:31:02,858] [INFO] PARQUET OK | A/a1.sql | clsYymm=202403 | rows=2 | 0.00MB | 0.12s
+[2026-02-10 23:31:02,906] [INFO] PARQUET OK | A/a2.sql | clsYymm=202312 | rows=1802 | 0.02MB | 0.05s
+[2026-02-10 23:31:02,953] [INFO] PARQUET OK | A/a2.sql | clsYymm=202403 | rows=1647 | 0.02MB | 0.09s
+[2026-02-10 23:31:02,991] [INFO] PARQUET OK | B/rate.sql | - | rows=185 | 0.01MB | 0.04s
+[2026-02-10 23:31:03,026] [INFO] DuckDB CREATE OK | local.A1 | rows=124
+[2026-02-10 23:31:03,034] [INFO] DuckDB INSERT OK | local.A1_202403 | rows=2
+[2026-02-10 23:31:03,050] [INFO] DuckDB CREATE OK | local.A2 | rows=1802
+[2026-02-10 23:31:03,070] [INFO] DuckDB INSERT OK | local.A2_202403 | rows=1647
+[2026-02-10 23:31:03,080] [INFO] DuckDB CREATE OK | local.RATE | rows=185
+[2026-02-10 23:31:03,100] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:31:03,125] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:31:03,127] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:31:03,128] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:31:03,132] [INFO] Batch finished
+[2026-02-10 23:42:50,503] [INFO] Batch started
+[2026-02-10 23:42:50,503] [INFO] RUN_MODE=ALL
+[2026-02-10 23:42:50,519] [INFO] Instant client not configured → using Thin mode
+[2026-02-10 23:42:50,519] [INFO] Oracle client mode: thin
+[2026-02-10 23:42:50,519] [INFO] HOSTS override: ['local']
+[2026-02-10 23:42:50,519] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:42:50,520] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:42:50,520] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:42:50,520] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:42:50,522] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:42:50,531] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:42:50,531] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:42:50,531] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:42:50,532] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:42:50,543] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:42:50,543] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:42:50,544] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:42:50,545] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:42:50,545] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:42:50,547] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:42:50,563] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:42:50,565] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:42:50,567] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:42:50,569] [INFO] Batch finished
+[2026-02-10 23:43:02,601] [INFO] Batch started
+[2026-02-10 23:43:02,601] [INFO] RUN_MODE=ALL
+[2026-02-10 23:43:02,614] [INFO] Instant client not configured → using Thin mode
+[2026-02-10 23:43:02,614] [INFO] Oracle client mode: thin
+[2026-02-10 23:43:02,614] [INFO] HOSTS override: ['local']
+[2026-02-10 23:43:02,614] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:43:02,614] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:43:02,614] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:43:02,615] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:43:02,616] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:43:02,616] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:43:02,616] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:43:02,617] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:43:02,617] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:43:02,629] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:43:02,630] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:43:02,630] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:43:02,631] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:43:02,632] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:43:02,634] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:43:02,652] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:43:02,654] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:43:02,656] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:43:02,658] [INFO] Batch finished
+[2026-02-10 23:45:43,893] [INFO] Batch started
+[2026-02-10 23:45:43,893] [INFO] RUN_MODE=ALL
+[2026-02-10 23:45:43,905] [INFO] Instant client not configured → using Thin mode
+[2026-02-10 23:45:43,906] [INFO] Oracle client mode: thin
+[2026-02-10 23:45:43,906] [INFO] HOSTS override: ['local']
+[2026-02-10 23:45:43,906] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:45:43,906] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:45:43,906] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:45:43,907] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:45:43,908] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:45:43,908] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:45:43,909] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:45:43,909] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:45:43,909] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:45:43,921] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:45:43,922] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:45:43,922] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:45:43,923] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:45:43,923] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:45:43,925] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:45:43,942] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:45:43,944] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:45:43,946] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:45:43,949] [INFO] Batch finished
+[2026-02-10 23:47:29,046] [INFO] Batch started
+[2026-02-10 23:47:29,046] [INFO] RUN_MODE=ALL
+[2026-02-10 23:47:29,058] [INFO] Instant client not configured → using Thin mode
+[2026-02-10 23:47:29,059] [INFO] Oracle client mode: thin
+[2026-02-10 23:47:29,059] [INFO] HOSTS override: ['local']
+[2026-02-10 23:47:29,059] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:29,059] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:29,059] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:47:29,060] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:47:29,061] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:47:29,061] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:47:29,062] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:47:29,062] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:47:29,062] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:47:29,074] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:47:29,074] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:47:29,075] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:47:29,076] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:47:29,076] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:47:29,079] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:47:29,097] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:47:29,099] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:47:29,100] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:47:29,103] [INFO] Batch finished
+[2026-02-10 23:47:44,415] [INFO] Batch started
+[2026-02-10 23:47:44,415] [INFO] RUN_MODE=ALL
+[2026-02-10 23:47:44,444] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:47:44,444] [INFO] Oracle client mode: thick
+[2026-02-10 23:47:44,444] [INFO] HOSTS override: ['local']
+[2026-02-10 23:47:44,444] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:44,445] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:44,445] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:47:44,445] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:47:44,447] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:47:44,447] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:47:44,447] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:47:44,447] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:47:44,448] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:47:44,460] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:47:44,461] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:47:44,461] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:47:44,461] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:47:44,462] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:47:44,465] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:47:44,483] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:47:44,485] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:47:44,486] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:47:44,490] [INFO] Batch finished
+[2026-02-10 23:47:49,686] [INFO] Batch started
+[2026-02-10 23:47:49,687] [INFO] RUN_MODE=ALL
+[2026-02-10 23:47:49,714] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:47:49,714] [INFO] Oracle client mode: thick
+[2026-02-10 23:47:49,715] [INFO] HOSTS override: ['local']
+[2026-02-10 23:47:49,715] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:49,715] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:49,715] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:47:49,715] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:47:49,717] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:47:49,717] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:47:49,718] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:47:49,718] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:47:49,718] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:47:49,730] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:47:49,730] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:47:49,731] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:47:49,731] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:47:49,732] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:47:49,734] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:47:49,751] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:47:49,753] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:47:49,755] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:47:49,758] [INFO] Batch finished
+[2026-02-10 23:47:55,998] [INFO] Batch started
+[2026-02-10 23:47:55,999] [INFO] RUN_MODE=ALL
+[2026-02-10 23:47:56,025] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:47:56,026] [INFO] Oracle client mode: thick
+[2026-02-10 23:47:56,026] [INFO] HOSTS override: ['local']
+[2026-02-10 23:47:56,026] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:56,026] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:47:56,027] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:47:56,027] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:47:56,099] [INFO] PARQUET OK | A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.07s
+[2026-02-10 23:47:56,137] [INFO] PARQUET OK | A/a1.sql | clsYymm=202403 | rows=2 | 0.00MB | 0.11s
+[2026-02-10 23:47:56,185] [INFO] PARQUET OK | A/a2.sql | clsYymm=202312 | rows=1802 | 0.02MB | 0.05s
+[2026-02-10 23:47:56,231] [INFO] PARQUET OK | A/a2.sql | clsYymm=202403 | rows=1647 | 0.02MB | 0.09s
+[2026-02-10 23:47:56,268] [INFO] PARQUET OK | B/rate.sql | - | rows=185 | 0.01MB | 0.04s
+[2026-02-10 23:47:56,303] [INFO] DuckDB CREATE OK | local.A1 | rows=124
+[2026-02-10 23:47:56,311] [INFO] DuckDB INSERT OK | local.A1_202403 | rows=2
+[2026-02-10 23:47:56,326] [INFO] DuckDB CREATE OK | local.A2 | rows=1802
+[2026-02-10 23:47:56,346] [INFO] DuckDB INSERT OK | local.A2_202403 | rows=1647
+[2026-02-10 23:47:56,355] [INFO] DuckDB CREATE OK | local.RATE | rows=185
+[2026-02-10 23:47:56,375] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:47:56,399] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:47:56,401] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:47:56,402] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:47:56,405] [INFO] Batch finished
+[2026-02-10 23:50:04,262] [INFO] Batch started
+[2026-02-10 23:50:04,262] [INFO] RUN_MODE=ALL
+[2026-02-10 23:50:04,290] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:50:04,290] [INFO] Instant client path from config: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:50:04,291] [INFO] HOSTS override: ['local']
+[2026-02-10 23:50:04,291] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:50:04,291] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:50:04,291] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:50:04,292] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:50:04,293] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:50:04,293] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:50:04,293] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:50:04,294] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:50:04,294] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:50:04,308] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:50:04,309] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:50:04,309] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:50:04,309] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:50:04,311] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:50:04,313] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:50:04,330] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:50:04,332] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:50:04,334] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:50:04,337] [INFO] Batch finished
+[2026-02-10 23:50:22,255] [INFO] Batch started
+[2026-02-10 23:50:22,255] [INFO] RUN_MODE=ALL
+[2026-02-10 23:50:22,281] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:50:22,282] [INFO] Oracle client mode: thick
+[2026-02-10 23:50:22,282] [INFO] HOSTS override: ['local']
+[2026-02-10 23:50:22,282] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:50:22,282] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:50:22,282] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:50:22,283] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:50:22,284] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:50:22,284] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:50:22,285] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:50:22,285] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:50:22,285] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:50:22,298] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:50:22,298] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:50:22,299] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:50:22,299] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:50:22,299] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:50:22,302] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:50:22,320] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:50:22,321] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:50:22,323] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:50:22,326] [INFO] Batch finished
+[2026-02-10 23:59:27,207] [INFO] Batch started
+[2026-02-10 23:59:27,207] [INFO] RUN_MODE=ALL
+[2026-02-10 23:59:27,238] [INFO] Oracle Thick mode initialized: C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+[2026-02-10 23:59:27,238] [INFO] Oracle client mode: thick
+[2026-02-10 23:59:27,238] [INFO] HOSTS override: ['local']
+[2026-02-10 23:59:27,239] [INFO] PARAMS override: {'clsYymm': '202312,202403'}
+[2026-02-10 23:59:27,239] [INFO] FINAL PARAMS: {'clsYymm': '202312,202403'}
+[2026-02-10 23:59:27,239] [INFO] DuckDB file: C:\work\batch_runner\duckdb\batch.duckdb
+[2026-02-10 23:59:27,239] [INFO] EXPORT FORMAT=parquet
+[2026-02-10 23:59:27,241] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-10 23:59:27,241] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202403.parquet
+[2026-02-10 23:59:27,241] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-10 23:59:27,242] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202403.parquet
+[2026-02-10 23:59:27,242] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-10 23:59:27,254] [INFO] DuckDB load SKIP (already loaded) | local.A1_202312
+[2026-02-10 23:59:27,254] [INFO] DuckDB load SKIP (already loaded) | local.A1_202403
+[2026-02-10 23:59:27,255] [INFO] DuckDB load SKIP (already loaded) | local.A2_202312
+[2026-02-10 23:59:27,255] [INFO] DuckDB load SKIP (already loaded) | local.A2_202403
+[2026-02-10 23:59:27,256] [INFO] DuckDB load SKIP (already loaded) | local.RATE
+[2026-02-10 23:59:27,259] [INFO] Excel export skipped | format=parquet
+[2026-02-10 23:59:27,275] [INFO] UNION VIEW skip (no suffix tables) | local.A1
+[2026-02-10 23:59:27,277] [INFO] UNION VIEW skip (no suffix tables) | local.A2
+[2026-02-10 23:59:27,279] [INFO] UNION VIEW skip (no suffix tables) | local.RATE
+[2026-02-10 23:59:27,281] [INFO] Batch finished

@@ -1,0 +1,4 @@
+﻿batch_ts,host,sql_file,status,issues,params_used,params_missing
+20260211_003754,local,a1.sql,OK,,clsYymm,
+20260211_003754,local,a2.sql,OK,,clsYymm,
+20260211_003754,local,rate.sql,OK,,,

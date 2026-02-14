@@ -1,0 +1,239 @@
+[2026-02-11 00:07:15,027] [WARNING] CSV EMPTY | A/a1.sql | clsYymm=202402 | rows=0
+[2026-02-11 00:07:15,089] [INFO] CSV OK | A/a2.sql | clsYymm=202402 | rows=1693 | 0.01MB | 0.06s
+[2026-02-11 00:07:15,131] [INFO] CSV OK | B/rate.sql | - | rows=185 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,437] [INFO] CSV OK | A/a1.sql | clsYymm=202301 | rows=185 | 0.00MB | 0.06s
+[2026-02-11 00:07:30,473] [INFO] CSV OK | A/a1.sql | clsYymm=202302 | rows=168 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,511] [INFO] CSV OK | A/a1.sql | clsYymm=202303 | rows=186 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,547] [INFO] CSV OK | A/a1.sql | clsYymm=202304 | rows=180 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,587] [INFO] CSV OK | A/a1.sql | clsYymm=202305 | rows=186 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,623] [INFO] CSV OK | A/a1.sql | clsYymm=202306 | rows=180 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,659] [INFO] CSV OK | A/a1.sql | clsYymm=202307 | rows=186 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,693] [INFO] CSV OK | A/a1.sql | clsYymm=202308 | rows=186 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,728] [INFO] CSV OK | A/a1.sql | clsYymm=202309 | rows=176 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,764] [INFO] CSV OK | A/a1.sql | clsYymm=202310 | rows=124 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,799] [INFO] CSV OK | A/a1.sql | clsYymm=202311 | rows=120 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,834] [INFO] CSV OK | A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,869] [INFO] CSV OK | A/a1.sql | clsYymm=202401 | rows=1 | 0.00MB | 0.03s
+[2026-02-11 00:07:30,901] [WARNING] CSV EMPTY | A/a1.sql | clsYymm=202402 | rows=0
+[2026-02-11 00:07:30,945] [INFO] CSV OK | A/a2.sql | clsYymm=202301 | rows=3 | 0.00MB | 0.04s
+[2026-02-11 00:07:30,991] [INFO] CSV OK | A/a2.sql | clsYymm=202302 | rows=176 | 0.00MB | 0.05s
+[2026-02-11 00:07:31,037] [INFO] CSV OK | A/a2.sql | clsYymm=202303 | rows=358 | 0.00MB | 0.05s
+[2026-02-11 00:07:31,083] [INFO] CSV OK | A/a2.sql | clsYymm=202304 | rows=538 | 0.00MB | 0.05s
+[2026-02-11 00:07:31,130] [INFO] CSV OK | A/a2.sql | clsYymm=202305 | rows=732 | 0.00MB | 0.05s
+[2026-02-11 00:07:31,175] [INFO] CSV OK | A/a2.sql | clsYymm=202306 | rows=904 | 0.01MB | 0.04s
+[2026-02-11 00:07:31,223] [INFO] CSV OK | A/a2.sql | clsYymm=202307 | rows=1106 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,271] [INFO] CSV OK | A/a2.sql | clsYymm=202308 | rows=1294 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,320] [INFO] CSV OK | A/a2.sql | clsYymm=202309 | rows=1456 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,377] [INFO] CSV OK | A/a2.sql | clsYymm=202310 | rows=1661 | 0.01MB | 0.06s
+[2026-02-11 00:07:31,427] [INFO] CSV OK | A/a2.sql | clsYymm=202311 | rows=1745 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,476] [INFO] CSV OK | A/a2.sql | clsYymm=202312 | rows=1802 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,527] [INFO] CSV OK | A/a2.sql | clsYymm=202401 | rows=1832 | 0.01MB | 0.05s
+[2026-02-11 00:07:31,528] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/local/A/a2_202402.csv.gz
+[2026-02-11 00:07:31,528] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/local/B/rate.csv.gz
+[2026-02-11 00:57:40,619] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.07s
+[2026-02-11 00:57:40,669] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202312 | rows=1802 | 0.01MB | 0.05s
+[2026-02-11 00:57:40,706] [INFO] CSV OK | oracle/local/B/rate.sql | - | rows=185 | 0.00MB | 0.04s
+[2026-02-11 01:00:19,565] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:00:19,566] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:00:19,566] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:00:22,487] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:00:22,487] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:00:22,488] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:00:44,941] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:00:44,941] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:00:44,942] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:08:49,734] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:08:49,735] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:08:49,735] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:20:08,122] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:20:08,123] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:20:08,123] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:20:45,428] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:20:45,429] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:20:45,429] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:21:43,016] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:21:43,016] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:21:43,016] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:22:42,914] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.08s
+[2026-02-11 01:22:42,967] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202312 | rows=1802 | 0.01MB | 0.05s
+[2026-02-11 01:22:43,009] [INFO] CSV OK | oracle/local/B/rate.sql | - | rows=185 | 0.00MB | 0.04s
+[2026-02-11 01:23:11,357] [INFO] PARQUET OK | A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.07s
+[2026-02-11 01:23:11,406] [INFO] PARQUET OK | A/a2.sql | clsYymm=202312 | rows=1802 | 0.02MB | 0.05s
+[2026-02-11 01:23:11,444] [INFO] PARQUET OK | B/rate.sql | - | rows=185 | 0.01MB | 0.04s
+[2026-02-11 01:25:10,868] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-11 01:25:10,868] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-11 01:25:10,869] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-11 01:25:15,665] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a1_202312.parquet
+[2026-02-11 01:25:15,665] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/A/a2_202312.parquet
+[2026-02-11 01:25:15,666] [INFO] Parquet exists, skip export | C:/work/batch_runner/data/parquet/local/B/rate.parquet
+[2026-02-11 01:25:30,537] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:25:30,537] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:25:30,538] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:27:41,381] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:27:41,382] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:27:41,382] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:27:50,817] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:27:50,817] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:27:50,818] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:28:53,229] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.08s
+[2026-02-11 01:28:53,282] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202312 | rows=1802 | 0.01MB | 0.05s
+[2026-02-11 01:28:53,318] [INFO] CSV OK | oracle/local/B/rate.sql | - | rows=185 | 0.00MB | 0.04s
+[2026-02-11 01:29:17,194] [INFO] PARQUET OK | A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.07s
+[2026-02-11 01:29:17,240] [INFO] PARQUET OK | A/a2.sql | clsYymm=202312 | rows=1802 | 0.02MB | 0.05s
+[2026-02-11 01:29:17,275] [INFO] PARQUET OK | B/rate.sql | - | rows=185 | 0.01MB | 0.03s
+[2026-02-11 01:30:21,657] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:30:21,658] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:30:21,658] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:36:02,399] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:36:02,400] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:36:02,400] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:37:11,261] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:37:11,262] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:37:11,262] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:38:28,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:38:28,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:38:28,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:38:37,401] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:38:37,402] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:38:37,402] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:38:47,703] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:38:47,704] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:38:47,704] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:38:56,171] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 01:38:56,171] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 01:38:56,172] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:53:15,823] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202403 | rows=2 | 0.00MB | 0.09s
+[2026-02-11 01:53:15,872] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202403 | rows=1647 | 0.01MB | 0.05s
+[2026-02-11 01:53:15,873] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:53:21,224] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202403.csv.gz
+[2026-02-11 01:53:21,224] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202403.csv.gz
+[2026-02-11 01:53:21,225] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:59:31,577] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202403.csv.gz
+[2026-02-11 01:59:31,577] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202403.csv.gz
+[2026-02-11 01:59:31,578] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:59:40,265] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202403.csv.gz
+[2026-02-11 01:59:40,265] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202403.csv.gz
+[2026-02-11 01:59:40,266] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 01:59:55,412] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202403.csv.gz
+[2026-02-11 01:59:55,413] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202403.csv.gz
+[2026-02-11 01:59:55,413] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 02:02:21,967] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202310 | rows=124 | 0.00MB | 0.07s
+[2026-02-11 02:02:21,969] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 02:02:22,019] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202310 | rows=1661 | 0.01MB | 0.05s
+[2026-02-11 02:02:22,020] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 02:02:22,021] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 02:02:37,219] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202301 | rows=185 | 0.00MB | 0.07s
+[2026-02-11 02:02:37,254] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202302 | rows=168 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,288] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202303 | rows=186 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,320] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202304 | rows=180 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,355] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202305 | rows=186 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,390] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202306 | rows=180 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,424] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202307 | rows=186 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,458] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202308 | rows=186 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,492] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202309 | rows=176 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,493] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202310.csv.gz
+[2026-02-11 02:02:37,526] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202311 | rows=120 | 0.00MB | 0.03s
+[2026-02-11 02:02:37,527] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 02:02:37,572] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202301 | rows=3 | 0.00MB | 0.04s
+[2026-02-11 02:02:37,617] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202302 | rows=176 | 0.00MB | 0.04s
+[2026-02-11 02:02:37,661] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202303 | rows=358 | 0.00MB | 0.04s
+[2026-02-11 02:02:37,706] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202304 | rows=538 | 0.00MB | 0.04s
+[2026-02-11 02:02:37,751] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202305 | rows=732 | 0.00MB | 0.04s
+[2026-02-11 02:02:37,797] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202306 | rows=904 | 0.01MB | 0.05s
+[2026-02-11 02:02:37,844] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202307 | rows=1106 | 0.01MB | 0.05s
+[2026-02-11 02:02:37,892] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202308 | rows=1294 | 0.01MB | 0.05s
+[2026-02-11 02:02:37,939] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202309 | rows=1456 | 0.01MB | 0.05s
+[2026-02-11 02:02:37,940] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202310.csv.gz
+[2026-02-11 02:02:37,988] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202311 | rows=1745 | 0.01MB | 0.05s
+[2026-02-11 02:02:37,989] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 02:02:37,989] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 02:22:38,748] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202301.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202302.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202303.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202304.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202305.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202306.csv.gz
+[2026-02-11 02:22:38,749] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202307.csv.gz
+[2026-02-11 02:22:38,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202308.csv.gz
+[2026-02-11 02:22:38,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202309.csv.gz
+[2026-02-11 02:22:38,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202310.csv.gz
+[2026-02-11 02:22:38,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202311.csv.gz
+[2026-02-11 02:22:38,750] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 02:22:38,751] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202301.csv.gz
+[2026-02-11 02:22:38,751] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202302.csv.gz
+[2026-02-11 02:22:38,751] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202303.csv.gz
+[2026-02-11 02:22:38,751] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202304.csv.gz
+[2026-02-11 02:22:38,752] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202305.csv.gz
+[2026-02-11 02:22:38,752] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202306.csv.gz
+[2026-02-11 02:22:38,752] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202307.csv.gz
+[2026-02-11 02:22:38,752] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202308.csv.gz
+[2026-02-11 02:22:38,752] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202309.csv.gz
+[2026-02-11 02:22:38,753] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202310.csv.gz
+[2026-02-11 02:22:38,753] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202311.csv.gz
+[2026-02-11 02:22:38,753] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 02:22:38,753] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 02:22:42,916] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202301.csv.gz
+[2026-02-11 02:22:42,916] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202302.csv.gz
+[2026-02-11 02:22:42,916] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202303.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202304.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202305.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202306.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202307.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202308.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202309.csv.gz
+[2026-02-11 02:22:42,917] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202310.csv.gz
+[2026-02-11 02:22:42,918] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202311.csv.gz
+[2026-02-11 02:22:42,918] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 02:22:42,918] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202301.csv.gz
+[2026-02-11 02:22:42,918] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202302.csv.gz
+[2026-02-11 02:22:42,918] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202303.csv.gz
+[2026-02-11 02:22:42,919] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202304.csv.gz
+[2026-02-11 02:22:42,919] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202305.csv.gz
+[2026-02-11 02:22:42,920] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202306.csv.gz
+[2026-02-11 02:22:42,920] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202307.csv.gz
+[2026-02-11 02:22:42,920] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202308.csv.gz
+[2026-02-11 02:22:42,920] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202309.csv.gz
+[2026-02-11 02:22:42,920] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202310.csv.gz
+[2026-02-11 02:22:42,921] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202311.csv.gz
+[2026-02-11 02:22:42,921] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 02:22:42,921] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 02:22:48,377] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202301.csv.gz
+[2026-02-11 02:22:48,377] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202302.csv.gz
+[2026-02-11 02:22:48,377] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202303.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202304.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202305.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202306.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202307.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202308.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202309.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202310.csv.gz
+[2026-02-11 02:22:48,378] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202311.csv.gz
+[2026-02-11 02:22:48,379] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 02:22:48,379] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202301.csv.gz
+[2026-02-11 02:22:48,379] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202302.csv.gz
+[2026-02-11 02:22:48,379] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202303.csv.gz
+[2026-02-11 02:22:48,379] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202304.csv.gz
+[2026-02-11 02:22:48,380] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202305.csv.gz
+[2026-02-11 02:22:48,380] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202306.csv.gz
+[2026-02-11 02:22:48,380] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202307.csv.gz
+[2026-02-11 02:22:48,380] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202308.csv.gz
+[2026-02-11 02:22:48,380] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202309.csv.gz
+[2026-02-11 02:22:48,381] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202310.csv.gz
+[2026-02-11 02:22:48,381] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202311.csv.gz
+[2026-02-11 02:22:48,381] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 02:22:48,382] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 03:52:42,089] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 03:52:42,090] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 03:53:08,045] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202310.csv.gz
+[2026-02-11 03:53:08,045] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 03:53:08,045] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202310.csv.gz
+[2026-02-11 03:53:08,045] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 03:53:08,047] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz
+[2026-02-11 04:03:56,925] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 04:03:56,926] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 04:04:32,139] [INFO] CSV OK | oracle/local/A/a1.sql | clsYymm=202312 | rows=124 | 0.00MB | 0.09s
+[2026-02-11 04:04:32,189] [INFO] CSV OK | oracle/local/A/a2.sql | clsYymm=202312 | rows=1802 | 0.01MB | 0.05s
+[2026-02-11 04:04:48,644] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 04:04:48,645] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz
+[2026-02-11 04:04:58,051] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz
+[2026-02-11 04:04:58,051] [INFO] CSV exists, skip export | C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz

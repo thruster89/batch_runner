@@ -1,0 +1,4 @@
+{
+  "duckdb_file": "example1.duckdb",
+  "duckdb_sql_dir": "duckdb_sql"
+}

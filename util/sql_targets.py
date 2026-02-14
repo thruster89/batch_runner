@@ -35,19 +35,26 @@ def collect_sql_files(
     return filtered
 
 
-def sql_files_to_tables(
-    sql_files: Iterable[Path],
-    schema: str,
-) -> set[str]:
-    """
-    sql 파일 → DuckDB 테이블명 집합
-    """
-    tables = set()
-    base = SQL_DIR / schema
+# def sql_files_to_tables(
+#     sql_files: Iterable[Path],
+#     schema: str,
+# ) -> set[str]:
+#     """
+#     sql 파일 → DuckDB 테이블명 집합
+#     """
+#     tables = set()
+#     base = SQL_DIR / schema
 
-    for p in sql_files:
-        rel = p.relative_to(base)
-        table = rel.stem.upper()
-        tables.add(table)
+#     for p in sql_files:
+#         rel = p.relative_to(base)
+#         table = rel.stem.upper()
+#         tables.add(table)
 
-    return tables
+#     return tables
+
+
+def sql_files_to_tables(sql_files: list[Path]):
+    """
+    SQL 파일 → 대상 테이블명 리스트 생성
+    """
+    return [p.stem.upper() for p in sql_files]

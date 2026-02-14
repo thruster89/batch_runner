@@ -1,0 +1,4 @@
+batch_ts,host,sql_file,params,sql_hash,status,rows,elapsed_sec,output_file,error_message
+20260211,local,A/a1.sql,clsYymm=202402,ebe145cfaecdd2d7a32f100f4d826728,OK,0,0.07,C:/work/batch_runner/data/csv/local/A/a1_202402.csv.gz,
+20260211,local,A/a2.sql,clsYymm=202402,20e6ece6e88dda4dde44d9e193b5ef19,OK,1693,0.06,C:/work/batch_runner/data/csv/local/A/a2_202402.csv.gz,
+20260211,local,B/rate.sql,-,74bc13ca2534d55b1288c5fc9c9a9523,OK,185,0.04,C:/work/batch_runner/data/csv/local/B/rate.csv.gz,

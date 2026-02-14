@@ -9,6 +9,8 @@ from util.filename_suffix import split_table_and_suffix
 
 def load_csv_to_duckdb(
     duckdb_file: Path,
+    source: str,                 # ★ 추가
+    host: str,                   # ★ 추가
     schema: str,
     target_tables: set[str],
     params: dict | None = None,
@@ -42,10 +44,21 @@ def load_csv_to_duckdb(
         """
     )
 
-    base_dir = CSV_DIR / schema
+    # -------------------------------------------------
+    # CSV 경로 (★ 핵심 수정)
+    # -------------------------------------------------
+    base_dir = CSV_DIR / source / host
+
+    logging.info("DuckDB CSV scan dir: %s", base_dir)
+
+    if not base_dir.exists():
+        logging.warning("CSV base dir not found: %s", base_dir)
+        con.close()
+        return
 
     for csv_file in base_dir.rglob("*.csv.gz"):
-        table, suffix = split_table_and_suffix(csv_file.name)
+        name = Path(csv_file.stem).stem
+        table, suffix = split_table_and_suffix(name)
         table = table.upper()
 
         # 이번 실행 대상 테이블만
@@ -53,12 +66,12 @@ def load_csv_to_duckdb(
             continue
 
         # -------------------------------------------------
-        # params 필터 (A안)
+        # params 필터
         # -------------------------------------------------
         if params and suffix:
             matched = True
-            for k, v in params.items():
-                if f"{k}={v}" not in suffix:
+            for v in params.values():
+                if str(v) not in suffix:
                     matched = False
                     break
             if not matched:

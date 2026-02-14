@@ -11,6 +11,9 @@ from openpyxl.utils import get_column_letter
 from util.paths import CSV_DIR, EXCEL_DIR, SQL_DIR
 
 
+# ---------------------------------------------------------
+# Excel 파일명 생성
+# ---------------------------------------------------------
 def get_excel_output_path(
     schema: str,
     top_folder: str,
@@ -18,9 +21,7 @@ def get_excel_output_path(
 ) -> Path:
     EXCEL_DIR.mkdir(exist_ok=True)
 
-    # 대표 파라미터 하나만 파일명에 사용 (보조 정보)
     ts = datetime.now().strftime("%y%m%d")
-
     base = f"{schema}_{top_folder}_{ts}"
 
     pattern = re.compile(rf"{base}_(\d+)\.xlsx")
@@ -34,7 +35,6 @@ def get_excel_output_path(
     next_idx = max((i for i, _ in existing), default=0) + 1
     out = EXCEL_DIR / f"{base}_{next_idx}.xlsx"
 
-    # retention
     existing_sorted = sorted(existing, key=lambda x: x[1].stat().st_mtime)
     while len(existing_sorted) >= max_files:
         _, old = existing_sorted.pop(0)
@@ -44,17 +44,21 @@ def get_excel_output_path(
     return out
 
 
-def csv_to_excel(schema: str, sql_files: list[Path]):
+# ---------------------------------------------------------
+# CSV → Excel
+# ---------------------------------------------------------
+def csv_to_excel(source: str, host_name: str, schema: str, sql_files: list[Path]):
     """
     이번 실행 대상 SQL 기준으로 생성된 CSV만 Excel로 변환
-    (suffix 포함 파일 그대로 사용)
     """
-    base_dir = CSV_DIR / schema
-    csv_files = csv_files_from_sql(sql_files, schema)
+
+    base_dir = CSV_DIR / source / host_name
+
+    csv_files = csv_files_from_sql(source, host_name, sql_files)
 
     if not csv_files:
-        logging.warning(
-            "No CSV files found for schema %s. Skip Excel export.",
+        logging.info(
+            "Excel export skipped | schema=%s | no CSV files",
             schema,
         )
         return
@@ -62,7 +66,7 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
     grouped: dict[str, list[Path]] = {}
     for csv in csv_files:
         rel = csv.relative_to(base_dir)
-        top = rel.parts[0]
+        top = rel.parts[0] if rel.parts else "ROOT"
         grouped.setdefault(top, []).append(csv)
 
     for top_folder, files in grouped.items():
@@ -70,6 +74,10 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
         summary_rows = []
 
         with pd.ExcelWriter(out, engine="openpyxl") as writer:
+
+            # --------------------------
+            # 각 CSV 시트로 저장
+            # --------------------------
             for csv in files:
                 rel = csv.relative_to(base_dir)
                 sheet = Path(rel.stem).stem.upper()[:31]
@@ -90,15 +98,17 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
 
                 ws = writer.book[sheet]
 
-                # header style
+                ws.freeze_panes = "A2"
+                ws.auto_filter.ref = ws.dimensions
+
                 header_fill = PatternFill("solid", fgColor="D9E1F2")
                 header_font = Font(bold=True)
+
                 for col_idx in range(1, len(df.columns) + 1):
                     c = ws.cell(row=1, column=col_idx)
                     c.fill = header_fill
                     c.font = header_font
 
-                # column width
                 for col_idx, col_name in enumerate(df.columns, start=1):
                     max_len = len(str(col_name))
                     for v in df.iloc[:, col_idx - 1]:
@@ -109,22 +119,25 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
                         50,
                     )
 
-                # numeric format
                 for col_idx, col_name in enumerate(df.columns, start=1):
                     if is_integer_dtype(df[col_name]) or is_float_dtype(df[col_name]):
                         for row in range(2, ws.max_row + 1):
-                            ws.cell(
-                                row=row,
-                                column=col_idx,
-                            ).number_format = "#,##0"
+                            ws.cell(row=row, column=col_idx).number_format = "#,##0"
 
-            # SUMMARY sheet
+            # --------------------------
+            # SUMMARY 시트
+            # --------------------------
             if summary_rows:
                 summary_df = pd.DataFrame(summary_rows)
                 summary_df.insert(0, "no", range(1, len(summary_df) + 1))
+
                 summary_df.to_excel(writer, sheet_name="SUMMARY", index=False)
 
                 ws = writer.book["SUMMARY"]
+
+                ws.freeze_panes = "A2"
+                ws.auto_filter.ref = ws.dimensions
+
                 header_fill = PatternFill("solid", fgColor="BDD7EE")
                 header_font = Font(bold=True)
 
@@ -143,6 +156,15 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
                         30,
                     )
 
+                # SUMMARY → 시트 이동 hyperlink
+                existing_sheets = set(writer.book.sheetnames)
+
+                for row_idx in range(2, ws.max_row + 1):
+                    sheet_name = ws.cell(row=row_idx, column=2).value
+                    if sheet_name and sheet_name in existing_sheets:
+                        ws.cell(row=row_idx, column=2).hyperlink = f"#'{sheet_name}'!A1"
+                        ws.cell(row=row_idx, column=2).style = "Hyperlink"
+
                 wb = writer.book
                 wb._sheets.insert(0, wb._sheets.pop(wb._sheets.index(ws)))
 
@@ -154,19 +176,20 @@ def csv_to_excel(schema: str, sql_files: list[Path]):
         )
 
 
-def csv_files_from_sql(sql_files: list[Path], schema: str) -> list[Path]:
-    """
-    SQL 기준으로 생성된 모든 CSV (suffix 포함) 수집
-    """
+# ---------------------------------------------------------
+# SQL 기준 CSV 찾기
+# ---------------------------------------------------------
+def csv_files_from_sql(source: str, host_name: str, sql_files: list[Path]) -> list[Path]:
+
     csv_files: list[Path] = []
 
     for sql_file in sql_files:
-        rel = sql_file.relative_to(SQL_DIR / schema)
+        rel = sql_file.relative_to(SQL_DIR / source / host_name)
         subdir = rel.parent
         table = rel.stem
 
         pattern = f"{table}*.csv.gz"
-        for csv in (CSV_DIR / schema / subdir).glob(pattern):
+        for csv in (CSV_DIR / source / host_name / subdir).glob(pattern):
             csv_files.append(csv)
 
     return csv_files
