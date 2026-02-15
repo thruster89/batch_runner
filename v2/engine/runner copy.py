@@ -27,7 +27,7 @@ class RunContext:
 # ----------------------------
 # Logging
 # ----------------------------
-def setup_logging(log_dir: Path, debug: bool):
+def setup_logging(log_dir: Path, debug: bool) -> logging.Logger:
     
     log_dir.mkdir(parents=True, exist_ok=True)
 
@@ -47,9 +47,11 @@ def setup_logging(log_dir: Path, debug: bool):
             "%Y-%m-%d %H:%M:%S",
         )
 
+    # root logger 설정
     root = logging.getLogger()
     root.setLevel(level)
 
+    # 중복 핸들러 방지 (재실행/재import 시)
     if root.handlers:
         root.handlers.clear()
 
@@ -63,6 +65,7 @@ def setup_logging(log_dir: Path, debug: bool):
     sh.setFormatter(fmt)
     root.addHandler(sh)
 
+    # runner 전용 logger는 이름만 의미 있음 (root로 흘러감)
     logger = logging.getLogger("batch_runner_v2")
     logger.setLevel(level)
     logger.propagate = True
@@ -73,6 +76,10 @@ def setup_logging(log_dir: Path, debug: bool):
 # Mode parse
 # ----------------------------
 def _parse_mode(v_mode: str) -> str:
+    """
+    CLI 입력을 대소문자/표기 흔들림 없이 표준 모드로 정규화한다.
+    return: 'dryrun' | 'normal' | 'retry'
+    """
     s = (v_mode or "").strip().lower()
 
     alias = {
@@ -95,14 +102,14 @@ def _parse_mode(v_mode: str) -> str:
         raise argparse.ArgumentTypeError(f"Invalid --mode: {v_mode} (use Dryrun/Normal/Retry)")
     return alias[s]
 
-
 def _mode_display(v_mode: str) -> str:
+    """
+    로그 표기용 PascalCase
+    """
     mapping = {"plan": "Plan", "run": "Run", "retry": "Retry"}
     return mapping.get(v_mode, v_mode)
 
-# ----------------------------
-# CLI param parser
-# ----------------------------
+
 def parse_cli_params(param_list):
     result = {}
     if not param_list:
@@ -116,7 +123,6 @@ def parse_cli_params(param_list):
         result[k.strip()] = v.strip()
 
     return result
-
 # ----------------------------
 # Loader
 # ----------------------------
@@ -155,18 +161,34 @@ def run_pipeline(ctx: RunContext):
             ctx.logger.error("Unknown stage: %s", stage_name)
             raise ValueError(f"Unknown stage: {stage_name}")
 
-        ctx.logger.info("[%d/%d] %s", idx, len(stages), stage_name.upper())
+        ctx.logger.info(
+            "[%d/%d] %s",
+            idx,
+            len(stages),
+            stage_name.upper()
+        )
         ctx.logger.info("-" * 60)
 
         start = time.time()
+
         stage_func(ctx)
+
         elapsed = time.time() - start
 
         ctx.logger.info("-" * 60)
-        ctx.logger.info("[%d/%d] %s DONE (%.2fs)", idx, len(stages), stage_name.upper(), elapsed)
+        ctx.logger.info(
+            "[%d/%d] %s DONE (%.2fs)",
+            idx,
+            len(stages),
+            stage_name.upper(),
+            elapsed
+        )
         ctx.logger.info("")
 
     ctx.logger.info("============== PIPELINE FINISHED ==============")
+
+
+
 
 # ----------------------------
 # Main
@@ -176,19 +198,20 @@ def main():
     parser.add_argument("--job", required=True, help="Path to job.yml")
     parser.add_argument("--env", default="config/env.yml", help="Path to env.yml")
     parser.add_argument("--workdir", default=".", help="Working directory")
-    parser.add_argument("--debug", action="store_true", help="Enable debug logging")
+    parser.add_argument("--debug", action="store_true", help="Enable debug logging (include source location)")
     parser.add_argument(
         "--mode",
         type=_parse_mode,
         default="dryrun",
-        help="Execution mode (Dryrun/Normal/Retry)",
+        help="Execution mode (Dryrun/Normal/Retry, case-insensitive; aliases: plan/run)",
     )
+    
     parser.add_argument(
-        "--param",
-        action="append",
-        help="Override parameter (key=value)",
-    )
-
+    "--param",
+    action="append",
+    help="Override parameter (key=value)",
+)
+    
     args = parser.parse_args()
 
     job_path = Path(args.job)
@@ -199,21 +222,15 @@ def main():
     env_config = load_env(env_path)
 
     logger = setup_logging(work_dir / "logs", debug=args.debug)
+
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    # 기본 params
-    params = dict(job_config.get("params", {}))
-
-    # CLI override merge
-    cli_params = parse_cli_params(args.param)
-    params.update(cli_params)
 
     ctx = RunContext(
         job_name=job_config.get("job_name", "unnamed_job"),
         run_id=run_id,
         job_config=job_config,
         env_config=env_config,
-        params=params,
+        params=job_config.get("params", {}),
         work_dir=work_dir,
         mode=args.mode,
         logger=logger,
@@ -240,8 +257,8 @@ def main():
         param_str = ", ".join(f"{k}={v}" for k, v in ctx.params.items())
         logger.info(" Params   : %s", param_str)
 
-    logger.info(" WORK Dir : %s", ctx.work_dir.resolve())
-
+    logger.info(" WORK Dir : %s", ctx.work_dir.resolve())        
+        
     log_file = None
     root_logger = logging.getLogger()
 
@@ -251,10 +268,12 @@ def main():
             break
 
     logger.info(" Log file : %s", log_file)
+
     logger.info("=" * 60)
     logger.info("")
 
     run_pipeline(ctx)
+
     logger.info("Job finished")
 
 

@@ -1,27 +1,23 @@
-# file: v2/adapters/sources/vertica_source.py
+# file: v2/adapters/sources/oracle_source.py
 
 import csv
 import gzip
-import time
 from pathlib import Path
 
 
-def export_sql_to_csv(
-    conn,
-    sql_text,
-    out_file,
-    logger,
-    compression="none",
-    fetch_size=10000,
-    stall_seconds=1800,   # 30분 기본 stall 기준
-):
+def export_sql_to_csv(conn, sql_text, out_file, logger, compression="none", fetch_size=10000):
+    """
+    fetchmany 기반 고속 CSV export
+    """
+
     cursor = conn.cursor()
+    cursor.arraysize = fetch_size
     cursor.execute(sql_text)
 
     if cursor.description is None:
         logger.warning("No result set returned, skipping CSV export")
         cursor.close()
-        return 0
+        return
 
     columns = [col[0] for col in cursor.description]
 
@@ -30,9 +26,6 @@ def export_sql_to_csv(
     out_file.parent.mkdir(parents=True, exist_ok=True)
 
     total_rows = 0
-    last_progress = time.time()
-    last_heartbeat = time.time()
-
     try:
         if compression == "gzip":
             f = gzip.open(tmp_file, "wt", newline="", encoding="utf-8")
@@ -45,34 +38,15 @@ def export_sql_to_csv(
 
             while True:
                 rows = cursor.fetchmany(fetch_size)
-
-                now = time.time()
-
-                # stall 감지
                 if not rows:
-                    # 결과 종료
                     break
 
                 writer.writerows(rows)
                 total_rows += len(rows)
-                last_progress = now
 
-                # 기존 progress 로그
                 if total_rows % (fetch_size * 5) == 0:
                     logger.info("CSV progress: %d rows", total_rows)
-                    last_heartbeat = now
-                else:
-                    # heartbeat (2분마다)
-                    if now - last_heartbeat >= 120:
-                        logger.info("CSV progress: %d rows (heartbeat)", total_rows)
-                        last_heartbeat = now
-
-                # stall watchdog
-                if now - last_progress > stall_seconds:
-                    raise RuntimeError(
-                        f"Fetch stalled > {stall_seconds} seconds"
-                    )
-
+                    
         tmp_file.replace(out_file)
         logger.debug("File committed: %s", out_file)
         cursor.close()
@@ -82,7 +56,6 @@ def export_sql_to_csv(
             total_rows,
             out_file,
         )
-
     except Exception:
         if tmp_file.exists():
             tmp_file.unlink()

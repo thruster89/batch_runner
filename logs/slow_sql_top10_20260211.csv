@@ -1,3 +1,0 @@
-﻿host,sql_file,elapsed_sec
-local,oracle/local/A/a1.sql,0.09
-local,oracle/local/A/a2.sql,0.05

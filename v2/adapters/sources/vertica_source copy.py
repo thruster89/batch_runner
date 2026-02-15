@@ -2,19 +2,11 @@
 
 import csv
 import gzip
-import time
 from pathlib import Path
 
 
-def export_sql_to_csv(
-    conn,
-    sql_text,
-    out_file,
-    logger,
-    compression="none",
-    fetch_size=10000,
-    stall_seconds=1800,   # 30분 기본 stall 기준
-):
+def export_sql_to_csv(conn, sql_text, out_file, logger, compression="none", fetch_size=10000):
+
     cursor = conn.cursor()
     cursor.execute(sql_text)
 
@@ -30,8 +22,6 @@ def export_sql_to_csv(
     out_file.parent.mkdir(parents=True, exist_ok=True)
 
     total_rows = 0
-    last_progress = time.time()
-    last_heartbeat = time.time()
 
     try:
         if compression == "gzip":
@@ -45,34 +35,15 @@ def export_sql_to_csv(
 
             while True:
                 rows = cursor.fetchmany(fetch_size)
-
-                now = time.time()
-
-                # stall 감지
                 if not rows:
-                    # 결과 종료
                     break
 
                 writer.writerows(rows)
                 total_rows += len(rows)
-                last_progress = now
 
-                # 기존 progress 로그
                 if total_rows % (fetch_size * 5) == 0:
                     logger.info("CSV progress: %d rows", total_rows)
-                    last_heartbeat = now
-                else:
-                    # heartbeat (2분마다)
-                    if now - last_heartbeat >= 120:
-                        logger.info("CSV progress: %d rows (heartbeat)", total_rows)
-                        last_heartbeat = now
-
-                # stall watchdog
-                if now - last_progress > stall_seconds:
-                    raise RuntimeError(
-                        f"Fetch stalled > {stall_seconds} seconds"
-                    )
-
+                    
         tmp_file.replace(out_file)
         logger.debug("File committed: %s", out_file)
         cursor.close()
@@ -82,7 +53,6 @@ def export_sql_to_csv(
             total_rows,
             out_file,
         )
-
     except Exception:
         if tmp_file.exists():
             tmp_file.unlink()

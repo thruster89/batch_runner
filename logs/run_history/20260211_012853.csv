@@ -1,4 +1,0 @@
-batch_ts,host,sql_file,params,sql_hash,status,rows,elapsed_sec,output_file,error_message
-20260211,local,oracle/local/A/a1.sql,clsYymm=202312,ebe145cfaecdd2d7a32f100f4d826728,OK,124,0.08,C:/work/batch_runner/data/csv/oracle/local/A/a1_202312.csv.gz,
-20260211,local,oracle/local/A/a2.sql,clsYymm=202312,20e6ece6e88dda4dde44d9e193b5ef19,OK,1802,0.05,C:/work/batch_runner/data/csv/oracle/local/A/a2_202312.csv.gz,
-20260211,local,oracle/local/B/rate.sql,-,74bc13ca2534d55b1288c5fc9c9a9523,OK,185,0.04,C:/work/batch_runner/data/csv/oracle/local/B/rate.csv.gz,
