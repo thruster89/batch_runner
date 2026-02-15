@@ -1,0 +1,25 @@
+job_name: cls_monthly
+
+params:
+  clsYymm: "202512"
+
+pipeline:
+  stages: [export, load_local, postwork]
+
+source:
+  type: vertica
+  host: pdwvdbs
+
+export:
+  sql_dir: sql/export/
+  out_dir: data/export/
+  format: csv
+  overwrite: false
+
+target:
+  type: duckdb
+  db_path: data/local/result.duckdb
+  load_mode: delete_insert
+
+postwork:
+  sql_dir: sql/postwork/

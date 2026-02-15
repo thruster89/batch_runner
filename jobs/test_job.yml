@@ -1,0 +1,36 @@
+job_name: test_pipeline
+
+params:
+  clsYymm: "202512"
+
+pipeline:
+  stages:
+    - export
+    - load_local
+    - postwork
+    - report
+
+source:
+  type: oracle
+  host: local
+
+export:
+  sql_dir: sql/export
+  out_dir: data/export
+  format: csv
+  compression: gzip     # none, gzip    
+  overwrite: True       # export 시 기존 파일이 있을 경우 덮어쓸지 여부 (true/false) 
+                        # overwrite: true인 경우 compression 옵션이 gzip이 아니더라도 기존 파일이 있으면 gzip으로 압축하여 백업 후 export 진행       
+
+
+report:
+  export_csv:
+    enabled: true
+    sql_dir: sql/report/
+    out_dir: data/report/
+
+  excel:
+    enabled: false
+    output: data/report/report.xlsx
+
+# docker run -d -p 5433:5433 -p 5444:5444 --name vertica-test vertica/vertica-ce

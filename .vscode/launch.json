@@ -1,0 +1,16 @@
+// file: .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "v2 runner (module) debug",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "v2.engine.runner",
+      "args": ["--job", "jobs/test_job.yml"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}
