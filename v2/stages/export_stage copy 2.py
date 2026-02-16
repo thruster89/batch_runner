@@ -1,63 +1,175 @@
-# file: v2/stages/export_stage.py
-
 import time
+import re
+import shutil
+from datetime import datetime
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from v2.adapters.sources.oracle_client import init_oracle_client, get_oracle_conn
 from v2.adapters.sources.vertica_client import get_vertica_conn
 from v2.engine.path_utils import resolve_path
 from v2.engine.sql_utils import sort_sql_files
+from v2.engine.runtime_state import stop_event
+
+
+def expand_range_value(value: str):
+    """
+    지원 형식
+
+    202101:202112
+    202101:202112~Q   (분기말)
+    202101:202112~H   (반기말)
+    202101:202112~Y   (연말)
+    """
+
+    raw = value.strip()
+
+    if "~" in raw:
+        range_part, opt = raw.split("~", 1)
+        opt = opt.upper().strip()
+    else:
+        range_part = raw
+        opt = None
+
+    if ":" not in range_part:
+        return [range_part]
+
+    start, end = range_part.split(":", 1)
+
+    def to_int_ym(s):
+        return int(s[:4]) * 12 + int(s[4:6]) - 1
+
+    def to_str_ym(n):
+        y = n // 12
+        m = n % 12 + 1
+        return f"{y:04d}{m:02d}"
+
+    s = to_int_ym(start)
+    e = to_int_ym(end)
+
+    result = []
+
+    for i in range(s, e + 1):
+        ym = to_str_ym(i)
+        month = ym[4:6]
+
+        if opt == "Q" and month not in ("03", "06", "09", "12"):
+            continue
+
+        if opt == "H" and month not in ("06", "12"):
+            continue
+
+        if opt == "Y" and month != "12":
+            continue
+
+        result.append(ym)
+
+    return result
+
+
+def expand_params(params: dict):
+    from itertools import product
+    import logging
+
+    logger = logging.getLogger(__name__)
+
+    multi_keys = []
+    values = []
+
+    for k, v in params.items():
+        v_str = str(v).strip()
+
+        multi_keys.append(k)
+
+        if ":" in v_str:
+            expanded = expand_range_value(v_str)
+            logger.info("Param expand | %s -> %d values", v_str, len(expanded))
+            values.append(expanded)
+
+        elif "," in v_str:
+            split_vals = [x.strip() for x in v_str.split(",")]
+            logger.info("Param expand | %s -> %d values", v_str, len(split_vals))
+            values.append(split_vals)
+
+        else:
+            logger.info("Param expand | %s -> 1 value", v_str)
+            values.append([v_str])
+
+    expanded = []
+    for combo in product(*values):
+        expanded.append(dict(zip(multi_keys, combo)))
+
+    return expanded
 
 
 def sanitize_sql(sql: str) -> str:
     sql = sql.strip()
-
     while sql.endswith(";") or sql.endswith("/"):
         sql = sql[:-1].rstrip()
-
     return sql
 
 
-def _render_sql(sql_text: str, params: dict) -> str:
-    """
-    안전한 치환:
-    - 키 길이 긴 것부터 치환 (id vs id2 등 prefix 충돌 방지)
-    """
+def build_csv_name(sqlname: str, host: str, params: dict, ext: str) -> str:
+    parts = [sqlname]
+
+    if host:
+        parts.append(host)
+
+    for k in sorted(params.keys()):
+        v = str(params[k]).replace(" ", "_")
+        parts.append(f"{k}_{v}")
+
+    return "__".join(parts) + f".{ext}"
+
+
+def backup_existing_file(file_path: Path, backup_dir: Path, keep: int = 10):
+    if not file_path.exists():
+        return
+
+    backup_dir.mkdir(parents=True, exist_ok=True)
+
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_name = file_path.stem + f"__{ts}" + file_path.suffix
+    target = backup_dir / backup_name
+
+    shutil.move(str(file_path), str(target))
+
+    prefix = file_path.stem + "__"
+    backups = sorted(
+        backup_dir.glob(prefix + "*.csv*"),
+        key=lambda p: p.stat().st_mtime
+    )
+
+    while len(backups) > keep:
+        backups[0].unlink()
+        backups.pop(0)
+
+
+def _render_sql(sql_text: str, params: dict):
     if not params:
         return sql_text
 
     for k in sorted(params.keys(), key=len, reverse=True):
-        v = params[k]
-        sql_text = sql_text.replace(f"${{{k}}}", str(v))
-        sql_text = sql_text.replace(f":{k}", str(v))
-        sql_text = sql_text.replace(f"{{#{k}}}", str(v))
+        v = str(params[k])
+
+        sql_text = sql_text.replace(f"${{{k}}}", v)
+        sql_text = sql_text.replace(f"{{#{k}}}", v)
+
+        pattern = re.compile(rf'(?<!:):{re.escape(k)}\b')
+        sql_text = pattern.sub(v, sql_text)
 
     return sql_text
 
 
-def preview_sql(sql_text, params, context=5):
-    lines = sql_text.splitlines()
-    hit_lines = []
+def build_log_prefix(sql_file: Path, params: dict):
+    if not params:
+        return f"[{sql_file.stem}]"
 
-    for i, line in enumerate(lines):
-        for v in params.values():
-            if str(v) in line:
-                hit_lines.append(i)
+    short = []
+    for k in sorted(params.keys()):
+        short.append(f"{k}={params[k]}")
 
-    if not hit_lines:
-        return "\n".join(lines[:10])
-
-    start = max(0, min(hit_lines) - context)
-    end = min(len(lines), max(hit_lines) + context + 1)
-
-    return "\n".join(lines[start:end])
-
-
-def format_params(params: dict) -> str:
-    lines = []
-    for k, v in params.items():
-        lines.append(f"--   {k} = {v}")
-    return "\n".join(lines)
+    return f"[{sql_file.stem}|{' '.join(short)}]"
 
 
 def run(ctx):
@@ -71,9 +183,7 @@ def run(ctx):
         return
 
     sql_dir = resolve_path(ctx, export_cfg["sql_dir"])
-    out_dir = resolve_path(ctx, export_cfg["out_dir"])
-
-    # 출력 디렉토리 보장
+    out_dir = resolve_path(ctx, export_cfg["out_dir"]) / ctx.job_name
     out_dir.mkdir(parents=True, exist_ok=True)
 
     source_sel = job_cfg.get("source", {})
@@ -85,48 +195,13 @@ def run(ctx):
         logger.warning("No SQL files found in %s", sql_dir)
         return
 
-    # --------------------------------------------------
-    # PLAN MODE (DB 연결 안 함)
-    # --------------------------------------------------
-    if ctx.mode == "plan":
-        log_dir = ctx.work_dir / "logs"
-        log_dir.mkdir(parents=True, exist_ok=True)
+    param_sets = expand_params(ctx.params)
 
-        plan_file = log_dir / f"plan_{ctx.run_id}.sql"
-
-        with open(plan_file, "w", encoding="utf-8") as pf:
-            for idx, sql_file in enumerate(sql_files, 1):
-                sql_text = sql_file.read_text(encoding="utf-8")
-
-                logger.info("PLAN SQL [%d/%d] : %s", idx, len(sql_files), sql_file.name)
-
-                rendered_sql = _render_sql(sql_text, ctx.params)
-                rendered_sql = sanitize_sql(rendered_sql)
-
-                preview = preview_sql(rendered_sql, ctx.params)
-
-                logger.info("Preview:")
-                for line in preview.splitlines():
-                    logger.info("  %s", line)
-                logger.info("")
-
-                pf.write("-- ======================================\n")
-                pf.write(f"-- FILE: {sql_file.name}\n")
-                pf.write("-- PARAMS:\n")
-                pf.write(format_params(ctx.params))
-                pf.write("\n\n")
-                pf.write(rendered_sql)
-                pf.write("\n\n")
-
-        logger.info("Plan file generated: %s", plan_file)
-        return
-
-    # --------------------------------------------------
-    # RUN / RETRY
-    # --------------------------------------------------
     fmt = export_cfg.get("format", "csv")
     compression = export_cfg.get("compression", "none")
     overwrite = export_cfg.get("overwrite", False)
+    backup_keep = export_cfg.get("backup_keep", 10)
+    parallel_workers = export_cfg.get("parallel_workers", 1)
 
     if fmt == "csv" and compression == "gzip":
         ext = "csv.gz"
@@ -137,193 +212,127 @@ def run(ctx):
     else:
         raise ValueError("Unsupported format")
 
-    # 30분 stall 정책 + 최대 3회 재시도 정책
     stall_seconds = 30 * 60
-    max_attempts = 3
 
-    conn = None
-    export_sql_to_csv = None
-    fetch_size = 10000
+    def _export_one(sql_file, param_set, idx, total_sql, param_idx, total_param):
 
-    # reconnect에 필요한 설정 보관
-    _host_cfg = None
-    _oracle_cfg = None
-    _vertica_cfg = None
+        # STOP 요청 즉시 탈출
+        if stop_event.is_set():
+            return
 
-    def _connect():
-        nonlocal conn, export_sql_to_csv, fetch_size, host_name, _host_cfg, _oracle_cfg, _vertica_cfg
+        local_conn = None
+        prefix = build_log_prefix(sql_file, param_set)
 
-        # 기존 연결 닫기
-        if conn:
-            try:
-                conn.close()
-            except Exception:
-                pass
-            conn = None
+        try:
+            if source_type == "oracle":
+                from v2.adapters.sources.oracle_source import export_sql_to_csv as _export
 
-        if source_type == "oracle":
-            from v2.adapters.sources.oracle_source import export_sql_to_csv as _export
+                oracle_cfg = env_cfg["sources"]["oracle"]
+                host_cfg = oracle_cfg["hosts"].get(host_name)
 
-            _oracle_cfg = env_cfg["sources"]["oracle"]
-            fetch_size = _oracle_cfg.get("export", {}).get("fetch_size", 10000)
+                if not host_cfg:
+                    raise RuntimeError(f"Oracle host not found: {host_name}")
 
-            if not host_name:
-                run_hosts = _oracle_cfg.get("run", {}).get("hosts", [])
-                if not run_hosts:
-                    raise RuntimeError("No oracle run hosts configured in env.yml")
-                host_name = run_hosts[0]
+                init_oracle_client(oracle_cfg)
+                local_conn = get_oracle_conn(host_cfg)
+                export_func = _export
+                fetch_size = oracle_cfg.get("export", {}).get("fetch_size", 10000)
 
-            _host_cfg = _oracle_cfg.get("hosts", {}).get(host_name)
-            if not _host_cfg:
-                raise RuntimeError(f"Oracle host not found in env.yml: {host_name}")
+            elif source_type == "vertica":
+                from v2.adapters.sources.vertica_source import export_sql_to_csv as _export
 
-            init_oracle_client(_oracle_cfg)
-            conn = get_oracle_conn(_host_cfg)
+                vertica_cfg = env_cfg["sources"]["vertica"]
+                host_cfg = vertica_cfg["hosts"].get(host_name)
+                local_conn = get_vertica_conn(host_cfg)
+                export_func = _export
+                fetch_size = vertica_cfg.get("export", {}).get("fetch_size", 10000)
 
-            # connection 레벨 call_timeout도 함께 세팅 (가능한 경우)
-            if hasattr(conn, "call_timeout"):
+            else:
+                raise ValueError(f"Unsupported source type: {source_type}")
+
+            csv_name = build_csv_name(
+                sqlname=sql_file.stem,
+                host=host_name,
+                params=param_set,
+                ext=ext,
+            )
+
+            out_file = out_dir / csv_name
+
+            if out_file.exists():
+                if overwrite:
+                    backup_dir = out_dir / "_backup"
+                    backup_existing_file(out_file, backup_dir, keep=backup_keep)
+                else:
+                    logger.info("%s skip (already completed): %s", prefix, out_file.name)
+                    return
+
+            logger.info(
+                "%s EXPORT start [%d/%d] param[%d/%d]",
+                prefix, idx, total_sql, param_idx, total_param
+            )
+
+            sql_text = sql_file.read_text(encoding="utf-8")
+            rendered_sql = sanitize_sql(_render_sql(sql_text, param_set))
+
+            start_time = time.time()
+
+            rows = export_func(
+                conn=local_conn,
+                sql_text=rendered_sql,
+                out_file=out_file,
+                logger=logger,
+                compression=compression,
+                fetch_size=fetch_size,
+                stall_seconds=stall_seconds,
+            )
+
+            rows = rows or 0
+            elapsed = time.time() - start_time
+            size_mb = out_file.stat().st_size / (1024 * 1024) if out_file.exists() else 0
+
+            logger.info(
+                "%s EXPORT done rows=%d size=%.2fMB elapsed=%.2fs",
+                prefix,
+                rows,
+                size_mb,
+                elapsed
+            )
+
+        finally:
+            if local_conn:
                 try:
-                    conn.call_timeout = stall_seconds * 1000
+                    local_conn.close()
                 except Exception:
                     pass
 
-            export_sql_to_csv = _export
-            logger.info("Oracle connection established")
+    logger.info("Parallel workers=%d", parallel_workers)
 
-        elif source_type == "vertica":
-            from v2.adapters.sources.vertica_source import export_sql_to_csv as _export
+    tasks = []
+    for idx, sql_file in enumerate(sql_files, 1):
+        for param_idx, param_set in enumerate(param_sets, 1):
+            if stop_event.is_set():
+                logger.warning("EXPORT stage aborted by user")
+                break
+            tasks.append((sql_file, param_set, idx, len(sql_files), param_idx, len(param_sets)))
 
-            _vertica_cfg = env_cfg["sources"]["vertica"]
-            fetch_size = _vertica_cfg.get("export", {}).get("fetch_size", 10000)
+    if parallel_workers <= 1:
+        for t in tasks:
+            if stop_event.is_set():
+                logger.warning("EXPORT stopped by user")
+                break
+            _export_one(*t)
+    else:
+        with ThreadPoolExecutor(max_workers=parallel_workers) as executor:
+            futures = []
 
-            if not host_name:
-                run_hosts = _vertica_cfg.get("run", {}).get("hosts", [])
-                if not run_hosts:
-                    raise RuntimeError("No vertica run hosts configured in env.yml")
-                host_name = run_hosts[0]
-
-            _host_cfg = _vertica_cfg.get("hosts", {}).get(host_name)
-            if not _host_cfg:
-                raise RuntimeError(f"Vertica host not found in env.yml: {host_name}")
-
-            conn = get_vertica_conn(_host_cfg)
-            export_sql_to_csv = _export
-            logger.info("Vertica connection established")
-
-        else:
-            raise ValueError(f"Unsupported source type: {source_type}")
-
-    try:
-        # 최초 연결
-        _connect()
-
-        logger.info("-" * 60)
-        logger.info("SQL execution order:")
-        for f in sql_files:
-            logger.info("  %s", f.name)
-
-        logger.info("")
-        logger.info("SQL count: %d", len(sql_files))
-
-        logger.info("-" * 60)
-        logger.info("Output format: %s", fmt.upper())
-        logger.info("Compression: %s", compression.upper())
-        logger.info("Overwrite mode: %s", overwrite)
-        logger.info("Run mode: %s", ctx.mode)
-        logger.info("Stall watchdog: %ds", stall_seconds)
-        logger.info("Max attempts: %d", max_attempts)
-        logger.info("-" * 60)
-
-        # --------------------------------------------------
-        # 실행 루프
-        # --------------------------------------------------
-        for idx, sql_file in enumerate(sql_files, 1):
-            out_file = out_dir / f"{sql_file.stem}.{ext}"
-            tmp_file = out_file.with_suffix(out_file.suffix + ".tmp")
-
-            # 공통 시작 조건: "성공 파일 skip", "tmp 존재 또는 out_file 없음부터 실행"
-            # - out_file 있고 tmp_file 없으면 "성공"으로 간주하고 skip
-            if out_file.exists() and not tmp_file.exists():
-                # 단, RUN 모드에서 overwrite=True이면 강제 재생성 허용
-                if ctx.mode == "run" and overwrite:
-                    logger.info("overwrite enabled (will re-export): %s", out_file.name)
-                else:
-                    logger.info("skip (already completed): %s", out_file.name)
-                    continue
-
-            # out_file 없거나 tmp_file 존재면 실행 대상
-            attempts = 0
-            last_err = None
-
-            while attempts < max_attempts:
-                attempts += 1
-
-                logger.info(
-                    "EXPORT SQL [%d/%d] attempt %d/%d start: %s",
-                    idx, len(sql_files), attempts, max_attempts, sql_file.name
-                )
-
-                try:
-                    sql_text = sql_file.read_text(encoding="utf-8")
-                    rendered_sql = _render_sql(sql_text, ctx.params)
-                    rendered_sql = sanitize_sql(rendered_sql)
-
-                    start_time = time.time()
-
-                    # Oracle stall watchdog는 oracle_source 내부에서 강제 예외 발생시키도록 구현됨
-                    rows = export_sql_to_csv(
-                        conn=conn,
-                        sql_text=rendered_sql,
-                        out_file=out_file,
-                        logger=logger,
-                        compression=compression,
-                        fetch_size=fetch_size,
-                        stall_seconds=stall_seconds,  # oracle_source에서 받도록 패치(아래 파일 참고)
-                    )
-
-                    # rows None 안전 처리
-                    if rows is None:
-                        rows = 0
-
-                    elapsed = time.time() - start_time
-                    size_mb = out_file.stat().st_size / (1024 * 1024) if out_file.exists() else 0
-
-                    logger.info(
-                        "EXPORT SQL [%d/%d] attempt %d/%d end: %s | rows=%d | size=%.2fMB | elapsed=%.2fs",
-                        idx, len(sql_files), attempts, max_attempts, sql_file.name, rows, size_mb, elapsed
-                    )
-
-                    # 성공 시 다음 SQL로
-                    last_err = None
+            for t in tasks:
+                if stop_event.is_set():
+                    logger.warning("EXPORT submission stopped by user")
                     break
+                futures.append(executor.submit(_export_one, *t))
 
-                except Exception as e:
-                    last_err = e
-                    logger.error(
-                        "EXPORT SQL [%d/%d] attempt %d/%d FAILED: %s | err=%s",
-                        idx, len(sql_files), attempts, max_attempts, sql_file.name, e
-                    )
-
-                    # 마지막 시도가 아니면 reconnect 후 같은 SQL 재실행
-                    if attempts < max_attempts:
-                        logger.info("Reconnect and retry same SQL: %s", sql_file.name)
-                        try:
-                            _connect()
-                        except Exception as e2:
-                            logger.error("Reconnect FAILED: %s", e2)
-                            raise
-                    else:
-                        # 3회 실패면 즉시 종료(다음 SQL 진행 X)
-                        logger.error("Max attempts reached. Abort pipeline at: %s", sql_file.name)
-                        raise
-
-    finally:
-        if conn:
-            try:
-                conn.close()
-                logger.info("")
-                logger.info("DB connection closed")
-            except Exception as e:
-                logger.warning("DB connection close failed: %s", e)
+            for f in as_completed(futures):
+                f.result()
 
     logger.debug("EXPORT stage end")

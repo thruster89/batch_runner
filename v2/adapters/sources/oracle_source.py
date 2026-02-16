@@ -2,7 +2,7 @@ import csv
 import gzip
 import time
 from pathlib import Path
-
+from v2.engine.runtime_state import stop_event
 
 def export_sql_to_csv(
     conn,
@@ -71,6 +71,9 @@ def export_sql_to_csv(
                 writer.writerow(columns)
 
                 while True:
+                    if stop_event.is_set():
+                        logger.warning("Export interrupted")
+                        break   
                     # fetchmany block 구간
                     rows = cursor.fetchmany(fetch_size)
                     if not rows:

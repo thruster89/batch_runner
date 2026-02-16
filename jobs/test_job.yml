@@ -1,4 +1,4 @@
-job_name: test_pipeline
+job_name: text_export
 
 params:
   clsYymm: "202512"
@@ -19,8 +19,8 @@ export:
   out_dir: data/export
   format: csv
   compression: gzip     # none, gzip    
-  overwrite: True       # export 시 기존 파일이 있을 경우 덮어쓸지 여부 (true/false) 
-                        # overwrite: true인 경우 compression 옵션이 gzip이 아니더라도 기존 파일이 있으면 gzip으로 압축하여 백업 후 export 진행       
+  overwrite: True       # export 시 기존 파일이 있을 경우 덮어쓸지 여부 (true/false) overwrite: true인 경우 compression 옵션이 gzip이 아니더라도 기존 파일이 있으면 gzip으로 압축하여 백업 후 export 진행
+  parallel_workers: 1   # export 시 병렬로 작업할 워커 수 (default: 1) - 병렬로 작업할 경우 export 시점에 테이블을 분할하여 여러 파일로 export
 
 
 report:

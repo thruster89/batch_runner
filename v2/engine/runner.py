@@ -1,5 +1,5 @@
 # file: v2/engine/runner.py
-
+import json
 import argparse
 import yaml
 import logging
@@ -9,6 +9,8 @@ from datetime import datetime
 from pathlib import Path
 
 from v2.engine.stage_registry import STAGE_REGISTRY
+from v2.engine.runtime_state import stop_event
+import signal
 
 # ----------------------------
 # Context
@@ -68,6 +70,44 @@ def setup_logging(log_dir: Path, debug: bool):
     logger.propagate = True
 
     return logger
+
+# ----------------------------
+# Run ID generator
+# ----------------------------
+def generate_run_id(base_dir: Path, job_name: str) -> str:
+    """
+    job_name_01, job_name_02 형태 run_id 생성
+    """
+    job_dir = base_dir / job_name
+    job_dir.mkdir(parents=True, exist_ok=True)
+
+    existing = []
+    for p in job_dir.iterdir():
+        if p.is_dir() and p.name.startswith(f"{job_name}_"):
+            try:
+                suffix = p.name.replace(f"{job_name}_", "")
+                existing.append(int(suffix))
+            except ValueError:
+                pass
+
+    next_no = max(existing) + 1 if existing else 1
+    return f"{job_name}_{next_no:02d}"
+
+
+def write_run_info(run_dir: Path, ctx: RunContext, start_time: str):
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    info = {
+        "job_name": ctx.job_name,
+        "run_id": ctx.run_id,
+        "start_time": start_time,
+        "mode": ctx.mode,
+        "params": ctx.params,
+        "host": ctx.job_config.get("source", {}).get("host"),
+    }
+
+    with open(run_dir / "run_info.json", "w", encoding="utf-8") as f:
+        json.dump(info, f, indent=2, ensure_ascii=False)
 
 # ----------------------------
 # Mode parse
@@ -149,6 +189,10 @@ def run_pipeline(ctx: RunContext):
     ctx.logger.info("")
 
     for idx, stage_name in enumerate(stages, 1):
+        if stop_event.is_set():
+            ctx.logger.warning("Pipeline stopped before stage execution")
+            break
+        
         stage_func = STAGE_REGISTRY.get(stage_name)
 
         if not stage_func:
@@ -165,6 +209,10 @@ def run_pipeline(ctx: RunContext):
         ctx.logger.info("-" * 60)
         ctx.logger.info("[%d/%d] %s DONE (%.2fs)", idx, len(stages), stage_name.upper(), elapsed)
         ctx.logger.info("")
+
+        if stop_event.is_set():
+            ctx.logger.warning("Pipeline stopped by user")
+            break
 
     ctx.logger.info("============== PIPELINE FINISHED ==============")
 
@@ -199,7 +247,17 @@ def main():
     env_config = load_env(env_path)
 
     logger = setup_logging(work_dir / "logs", debug=args.debug)
-    run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    job_name = job_config.get("job_name", "unnamed_job")
+
+    def _handle_sigint(sig, frame):
+        logger.warning("STOP requested (Ctrl+C)")
+        stop_event.set()
+
+    signal.signal(signal.SIGINT, _handle_sigint)
+
+    export_base = Path(job_config.get("export", {}).get("out_dir", "data/export"))
+    run_id = generate_run_id(export_base, job_name)
+    start_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # 기본 params
     params = dict(job_config.get("params", {}))
@@ -209,7 +267,7 @@ def main():
     params.update(cli_params)
 
     ctx = RunContext(
-        job_name=job_config.get("job_name", "unnamed_job"),
+        job_name=job_name,
         run_id=run_id,
         job_config=job_config,
         env_config=env_config,
@@ -226,6 +284,7 @@ def main():
 
     logger.info(" Job Name : %s", ctx.job_name)
     logger.info(" Run ID   : %s", ctx.run_id)
+    logger.info(" Start    : %s", start_time_str)
 
     source_sel = ctx.job_config.get("source", {})
     logger.info(" Mode     : %s", _mode_display(ctx.mode))
@@ -251,6 +310,8 @@ def main():
             break
 
     logger.info(" Log file : %s", log_file)
+    run_dir = export_base / job_name / run_id
+    write_run_info(run_dir, ctx, start_time_str)
     logger.info("=" * 60)
     logger.info("")
 
