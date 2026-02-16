@@ -1,7 +1,7 @@
 {
   "job_name": "text_export",
   "run_id": "text_export_01",
-  "start_time": "2026-02-16 14:01:55",
+  "start_time": "2026-02-16 14:24:32",
   "mode": "run",
   "params": {
     "clsYymm": "202001:202512~Q",
