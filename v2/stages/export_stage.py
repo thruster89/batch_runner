@@ -211,6 +211,10 @@ def run(ctx):
     job_cfg = ctx.job_config
     env_cfg = ctx.env_config
 
+    if ctx.mode == "plan":
+        logger.info("EXPORT stage skipped (plan mode)")
+        return
+
     export_cfg = job_cfg.get("export")
     if not export_cfg:
         logger.info("EXPORT stage skipped (no config)")
@@ -252,7 +256,10 @@ def run(ctx):
         try:
             conn = get_thread_connection(source_type, env_cfg, host_name)
 
-            from v2.adapters.sources.oracle_source import export_sql_to_csv as export_func
+            if source_type == "vertica":
+                from v2.adapters.sources.vertica_source import export_sql_to_csv as export_func
+            else:
+                from v2.adapters.sources.oracle_source import export_sql_to_csv as export_func
 
             csv_name = build_csv_name(
                 sqlname=sql_file.stem,

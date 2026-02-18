@@ -22,7 +22,21 @@ export:
   overwrite: True       # export 시 기존 파일이 있을 경우 덮어쓸지 여부 (true/false) overwrite: true인 경우 compression 옵션이 gzip이 아니더라도 기존 파일이 있으면 gzip으로 압축하여 백업 후 export 진행
   parallel_workers: 1   # export 시 병렬로 작업할 워커 수 (default: 1) - 병렬로 작업할 경우 export 시점에 테이블을 분할하여 여러 파일로 export
 
+# ----------------------------------------
+# target: load_local 스테이지에서 CSV를 적재할 DB 설정
+# type: duckdb / sqlite3 / oracle 중 택1
+# ----------------------------------------
+target:
+  type: duckdb
+  db_path: data/local/result.duckdb
 
+  # sqlite3 사용 시:
+  # type: sqlite3
+  # db_path: data/local/result.sqlite
+
+  # oracle 사용 시 (env.yml의 sources.oracle.hosts.local 사용):
+  # type: oracle
+  
 report:
   export_csv:
     enabled: true

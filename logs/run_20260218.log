@@ -4657,3 +4657,1190 @@
 2026-02-18 12:21:13 | INFO | batch_runner_v2 | runner.py:211 | run_pipeline | 
 2026-02-18 12:21:13 | INFO | batch_runner_v2 | runner.py:217 | run_pipeline | ============== PIPELINE FINISHED ==============
 2026-02-18 12:21:13 | INFO | batch_runner_v2 | runner.py:319 | main | Job finished
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | ============================================================
+2026-02-18 12:31:28 | INFO |  JOB START
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO |  Job Name : text_export
+2026-02-18 12:31:28 | INFO |  Run ID   : text_export_02
+2026-02-18 12:31:28 | INFO |  Start    : 2026-02-18 12:31:28
+2026-02-18 12:31:28 | INFO |  Mode     : Plan
+2026-02-18 12:31:28 | INFO |  Source   : oracle
+2026-02-18 12:31:28 | INFO |  Host     : local
+2026-02-18 12:31:28 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:31:28 | INFO |  Out Dir  : data/export
+2026-02-18 12:31:28 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:31:28 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:31:28 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:31:28 | INFO | ============================================================
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | ============================================================
+2026-02-18 12:31:28 | INFO |  PIPELINE START
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | [1/4] EXPORT
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:31:28 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:31:28 | INFO | Parallel workers=1
+2026-02-18 12:31:28 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:31:28 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:31:28 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:31:28 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:31:28 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:31:28 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:31:28 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:31:28 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:31:28 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:31:28 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.01s
+2026-02-18 12:31:28 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:31:28 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:31:28 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:31:28 | INFO | EXPORT stage end
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | LOAD stage start
+2026-02-18 12:31:28 | INFO | LOAD stage skipped (plan mode)
+2026-02-18 12:31:28 | INFO | LOAD stage end
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | [3/4] POSTWORK
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | POSTWORK stage start
+2026-02-18 12:31:28 | INFO | POSTWORK stage end
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | [4/4] REPORT
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | REPORT stage start
+2026-02-18 12:31:28 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:31:28 | INFO | REPORT excel export skipped
+2026-02-18 12:31:28 | INFO | REPORT stage end
+2026-02-18 12:31:28 | INFO | ------------------------------------------------------------
+2026-02-18 12:31:28 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:31:28 | INFO | 
+2026-02-18 12:31:28 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:31:28 | INFO | Job finished
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | ============================================================
+2026-02-18 12:32:51 | INFO |  JOB START
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO |  Job Name : text_export
+2026-02-18 12:32:51 | INFO |  Run ID   : text_export_03
+2026-02-18 12:32:51 | INFO |  Start    : 2026-02-18 12:32:51
+2026-02-18 12:32:51 | INFO |  Mode     : Plan
+2026-02-18 12:32:51 | INFO |  Source   : oracle
+2026-02-18 12:32:51 | INFO |  Host     : local
+2026-02-18 12:32:51 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:32:51 | INFO |  Out Dir  : data/export
+2026-02-18 12:32:51 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:32:51 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:32:51 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:32:51 | INFO | ============================================================
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | ============================================================
+2026-02-18 12:32:51 | INFO |  PIPELINE START
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | [1/4] EXPORT
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | EXPORT stage skipped (plan mode)
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | [1/4] EXPORT DONE (0.00s)
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | LOAD stage start
+2026-02-18 12:32:51 | INFO | LOAD stage skipped (plan mode)
+2026-02-18 12:32:51 | INFO | LOAD stage end
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | [3/4] POSTWORK
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | POSTWORK stage start
+2026-02-18 12:32:51 | INFO | POSTWORK stage end
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | [4/4] REPORT
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | REPORT stage start
+2026-02-18 12:32:51 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:32:51 | INFO | REPORT excel export skipped
+2026-02-18 12:32:51 | INFO | REPORT stage end
+2026-02-18 12:32:51 | INFO | ------------------------------------------------------------
+2026-02-18 12:32:51 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:32:51 | INFO | 
+2026-02-18 12:32:51 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:32:51 | INFO | Job finished
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | ============================================================
+2026-02-18 12:33:04 | INFO |  JOB START
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO |  Job Name : text_export
+2026-02-18 12:33:04 | INFO |  Run ID   : text_export_04
+2026-02-18 12:33:04 | INFO |  Start    : 2026-02-18 12:33:04
+2026-02-18 12:33:04 | INFO |  Mode     : Plan
+2026-02-18 12:33:04 | INFO |  Source   : oracle
+2026-02-18 12:33:04 | INFO |  Host     : local
+2026-02-18 12:33:04 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:33:04 | INFO |  Out Dir  : data/export
+2026-02-18 12:33:04 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:33:04 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:33:04 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:33:04 | INFO | ============================================================
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | ============================================================
+2026-02-18 12:33:04 | INFO |  PIPELINE START
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | [1/4] EXPORT
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | EXPORT stage skipped (plan mode)
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | [1/4] EXPORT DONE (0.00s)
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | LOAD stage start
+2026-02-18 12:33:04 | INFO | LOAD stage skipped (plan mode)
+2026-02-18 12:33:04 | INFO | LOAD stage end
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | [3/4] POSTWORK
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | POSTWORK stage start
+2026-02-18 12:33:04 | INFO | POSTWORK stage end
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | [4/4] REPORT
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | REPORT stage start
+2026-02-18 12:33:04 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:33:04 | INFO | REPORT excel export skipped
+2026-02-18 12:33:04 | INFO | REPORT stage end
+2026-02-18 12:33:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:33:04 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:33:04 | INFO | 
+2026-02-18 12:33:04 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:33:04 | INFO | Job finished
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | ============================================================
+2026-02-18 12:34:17 | INFO |  JOB START
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO |  Job Name : text_export
+2026-02-18 12:34:17 | INFO |  Run ID   : text_export_05
+2026-02-18 12:34:17 | INFO |  Start    : 2026-02-18 12:34:17
+2026-02-18 12:34:17 | INFO |  Mode     : Plan
+2026-02-18 12:34:17 | INFO |  Source   : oracle
+2026-02-18 12:34:17 | INFO |  Host     : local
+2026-02-18 12:34:17 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:34:17 | INFO |  Out Dir  : data/export
+2026-02-18 12:34:17 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:34:17 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:34:17 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:34:17 | INFO | ============================================================
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | ============================================================
+2026-02-18 12:34:17 | INFO |  PIPELINE START
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | [1/4] EXPORT
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | EXPORT stage skipped (plan mode)
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | [1/4] EXPORT DONE (0.00s)
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | LOAD stage start
+2026-02-18 12:34:17 | INFO | LOAD stage skipped (plan mode)
+2026-02-18 12:34:17 | INFO | LOAD stage end
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | [3/4] POSTWORK
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | POSTWORK stage start
+2026-02-18 12:34:17 | INFO | POSTWORK stage end
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | [4/4] REPORT
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | REPORT stage start
+2026-02-18 12:34:17 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:34:17 | INFO | REPORT excel export skipped
+2026-02-18 12:34:17 | INFO | REPORT stage end
+2026-02-18 12:34:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:34:17 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:34:17 | INFO | 
+2026-02-18 12:34:17 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:34:17 | INFO | Job finished
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | ============================================================
+2026-02-18 12:36:00 | INFO |  JOB START
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO |  Job Name : text_export
+2026-02-18 12:36:00 | INFO |  Run ID   : text_export_06
+2026-02-18 12:36:00 | INFO |  Start    : 2026-02-18 12:36:00
+2026-02-18 12:36:00 | INFO |  Mode     : Plan
+2026-02-18 12:36:00 | INFO |  Source   : oracle
+2026-02-18 12:36:00 | INFO |  Host     : local
+2026-02-18 12:36:00 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:36:00 | INFO |  Out Dir  : data/export
+2026-02-18 12:36:00 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:36:00 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:36:00 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:36:00 | INFO | ============================================================
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | ============================================================
+2026-02-18 12:36:00 | INFO |  PIPELINE START
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | [1/4] EXPORT
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | EXPORT stage skipped (plan mode)
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | [1/4] EXPORT DONE (0.00s)
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | LOAD stage start
+2026-02-18 12:36:00 | INFO | LOAD stage skipped (plan mode)
+2026-02-18 12:36:00 | INFO | LOAD stage end
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | [3/4] POSTWORK
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | POSTWORK stage start
+2026-02-18 12:36:00 | INFO | POSTWORK stage end
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | [4/4] REPORT
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | REPORT stage start
+2026-02-18 12:36:00 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:36:00 | INFO | REPORT excel export skipped
+2026-02-18 12:36:00 | INFO | REPORT stage end
+2026-02-18 12:36:00 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:00 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:36:00 | INFO | 
+2026-02-18 12:36:00 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:36:00 | INFO | Job finished
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | ============================================================
+2026-02-18 12:36:10 | INFO |  JOB START
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO |  Job Name : text_export
+2026-02-18 12:36:10 | INFO |  Run ID   : text_export_07
+2026-02-18 12:36:10 | INFO |  Start    : 2026-02-18 12:36:10
+2026-02-18 12:36:10 | INFO |  Mode     : Run
+2026-02-18 12:36:10 | INFO |  Source   : oracle
+2026-02-18 12:36:10 | INFO |  Host     : local
+2026-02-18 12:36:10 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:36:10 | INFO |  Out Dir  : data/export
+2026-02-18 12:36:10 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:36:10 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:36:10 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:36:10 | INFO | ============================================================
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | ============================================================
+2026-02-18 12:36:10 | INFO |  PIPELINE START
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | [1/4] EXPORT
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:36:10 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:36:10 | INFO | Parallel workers=1
+2026-02-18 12:36:10 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:36:10 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:36:10 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:36:10 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:36:10 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:36:10 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:36:10 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:36:10 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:36:10 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:36:10 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:36:10 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:36:10 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:36:10 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:36:10 | INFO | EXPORT stage end
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | LOAD stage start
+2026-02-18 12:36:10 | INFO | LOAD stage skipped (no target config)
+2026-02-18 12:36:10 | INFO | LOAD stage end
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | [3/4] POSTWORK
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | POSTWORK stage start
+2026-02-18 12:36:10 | INFO | POSTWORK stage end
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | [4/4] REPORT
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | REPORT stage start
+2026-02-18 12:36:10 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:36:10 | INFO | REPORT excel export skipped
+2026-02-18 12:36:10 | INFO | REPORT stage end
+2026-02-18 12:36:10 | INFO | ------------------------------------------------------------
+2026-02-18 12:36:10 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:36:10 | INFO | 
+2026-02-18 12:36:10 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:36:10 | INFO | Job finished
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | ============================================================
+2026-02-18 12:38:25 | INFO |  JOB START
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO |  Job Name : text_export
+2026-02-18 12:38:25 | INFO |  Run ID   : text_export_08
+2026-02-18 12:38:25 | INFO |  Start    : 2026-02-18 12:38:25
+2026-02-18 12:38:25 | INFO |  Mode     : Run
+2026-02-18 12:38:25 | INFO |  Source   : oracle
+2026-02-18 12:38:25 | INFO |  Host     : local
+2026-02-18 12:38:25 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:38:25 | INFO |  Out Dir  : data/export
+2026-02-18 12:38:25 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:38:25 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:38:25 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:38:25 | INFO | ============================================================
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | ============================================================
+2026-02-18 12:38:25 | INFO |  PIPELINE START
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | [1/4] EXPORT
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:38:25 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:38:25 | INFO | Parallel workers=1
+2026-02-18 12:38:25 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:38:25 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:38:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:38:25 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:38:25 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:38:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:38:25 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:38:25 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:38:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:38:25 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.01s
+2026-02-18 12:38:25 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:38:25 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:38:25 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:38:25 | INFO | EXPORT stage end
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | [1/4] EXPORT DONE (0.13s)
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | LOAD stage start
+2026-02-18 12:38:25 | INFO | LOAD stage skipped (no target config)
+2026-02-18 12:38:25 | INFO | LOAD stage end
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | [3/4] POSTWORK
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | POSTWORK stage start
+2026-02-18 12:38:25 | INFO | POSTWORK stage end
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | [4/4] REPORT
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | REPORT stage start
+2026-02-18 12:38:25 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:38:25 | INFO | REPORT excel export skipped
+2026-02-18 12:38:25 | INFO | REPORT stage end
+2026-02-18 12:38:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:38:25 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:38:25 | INFO | 
+2026-02-18 12:38:25 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:38:25 | INFO | Job finished
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | ============================================================
+2026-02-18 12:40:02 | INFO |  JOB START
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO |  Job Name : text_export
+2026-02-18 12:40:02 | INFO |  Run ID   : text_export_09
+2026-02-18 12:40:02 | INFO |  Start    : 2026-02-18 12:40:02
+2026-02-18 12:40:02 | INFO |  Mode     : Retry
+2026-02-18 12:40:02 | INFO |  Source   : oracle
+2026-02-18 12:40:02 | INFO |  Host     : local
+2026-02-18 12:40:02 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:40:02 | INFO |  Out Dir  : data/export
+2026-02-18 12:40:02 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:40:02 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:40:02 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:40:02 | INFO | ============================================================
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | ============================================================
+2026-02-18 12:40:02 | INFO |  PIPELINE START
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | [1/4] EXPORT
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:40:02 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:40:02 | INFO | Parallel workers=1
+2026-02-18 12:40:02 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:40:02 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:40:02 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:40:02 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:40:02 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:40:02 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:40:02 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:40:02 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:40:02 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:40:02 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:40:02 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:40:02 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:40:02 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:40:02 | INFO | EXPORT stage end
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | [1/4] EXPORT DONE (0.11s)
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | LOAD stage start
+2026-02-18 12:40:02 | INFO | LOAD stage skipped (no target config)
+2026-02-18 12:40:02 | INFO | LOAD stage end
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | [3/4] POSTWORK
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | POSTWORK stage start
+2026-02-18 12:40:02 | INFO | POSTWORK stage end
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | [4/4] REPORT
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | REPORT stage start
+2026-02-18 12:40:02 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:40:02 | INFO | REPORT excel export skipped
+2026-02-18 12:40:02 | INFO | REPORT stage end
+2026-02-18 12:40:02 | INFO | ------------------------------------------------------------
+2026-02-18 12:40:02 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:40:02 | INFO | 
+2026-02-18 12:40:02 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:40:02 | INFO | Job finished
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | ============================================================
+2026-02-18 12:45:05 | INFO |  JOB START
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO |  Job Name : text_export
+2026-02-18 12:45:05 | INFO |  Run ID   : text_export_10
+2026-02-18 12:45:05 | INFO |  Start    : 2026-02-18 12:45:05
+2026-02-18 12:45:05 | INFO |  Mode     : Retry
+2026-02-18 12:45:05 | INFO |  Source   : oracle
+2026-02-18 12:45:05 | INFO |  Host     : local
+2026-02-18 12:45:05 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:45:05 | INFO |  Out Dir  : data/export
+2026-02-18 12:45:05 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:45:05 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:45:05 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:45:05 | INFO | ============================================================
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | ============================================================
+2026-02-18 12:45:05 | INFO |  PIPELINE START
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | [1/4] EXPORT
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:45:05 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:45:05 | INFO | Parallel workers=1
+2026-02-18 12:45:05 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:45:05 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:45:05 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:05 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:05 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:45:05 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:05 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:45:05 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:45:05 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:05 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:05 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:45:05 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:05 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:05 | INFO | EXPORT stage end
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | [1/4] EXPORT DONE (0.14s)
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | LOAD stage start
+2026-02-18 12:45:05 | WARNING | No CSV files found in data\export\text_export
+2026-02-18 12:45:05 | INFO | LOAD stage end
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | [3/4] POSTWORK
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | POSTWORK stage start
+2026-02-18 12:45:05 | INFO | POSTWORK stage end
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | [4/4] REPORT
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | REPORT stage start
+2026-02-18 12:45:05 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:45:05 | INFO | REPORT excel export skipped
+2026-02-18 12:45:05 | INFO | REPORT stage end
+2026-02-18 12:45:05 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:05 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:45:05 | INFO | 
+2026-02-18 12:45:05 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:45:05 | INFO | Job finished
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | ============================================================
+2026-02-18 12:45:54 | INFO |  JOB START
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO |  Job Name : text_export
+2026-02-18 12:45:54 | INFO |  Run ID   : text_export_11
+2026-02-18 12:45:54 | INFO |  Start    : 2026-02-18 12:45:54
+2026-02-18 12:45:54 | INFO |  Mode     : Retry
+2026-02-18 12:45:54 | INFO |  Source   : oracle
+2026-02-18 12:45:54 | INFO |  Host     : local
+2026-02-18 12:45:54 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:45:54 | INFO |  Out Dir  : data/export
+2026-02-18 12:45:54 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:45:54 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:45:54 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:45:54 | INFO | ============================================================
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | ============================================================
+2026-02-18 12:45:54 | INFO |  PIPELINE START
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | [1/4] EXPORT
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:45:54 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:45:54 | INFO | Parallel workers=1
+2026-02-18 12:45:54 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:45:54 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:45:54 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:54 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:54 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:45:54 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:54 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:45:54 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:45:54 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:54 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:54 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:45:54 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:54 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:54 | INFO | EXPORT stage end
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | [1/4] EXPORT DONE (0.11s)
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | LOAD stage start
+2026-02-18 12:45:54 | WARNING | No CSV files found in data\export\text_export
+2026-02-18 12:45:54 | INFO | LOAD stage end
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | [3/4] POSTWORK
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | POSTWORK stage start
+2026-02-18 12:45:54 | INFO | POSTWORK stage end
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | [4/4] REPORT
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | REPORT stage start
+2026-02-18 12:45:54 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:45:54 | INFO | REPORT excel export skipped
+2026-02-18 12:45:54 | INFO | REPORT stage end
+2026-02-18 12:45:54 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:54 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:45:54 | INFO | 
+2026-02-18 12:45:54 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:45:54 | INFO | Job finished
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | ============================================================
+2026-02-18 12:45:56 | INFO |  JOB START
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO |  Job Name : text_export
+2026-02-18 12:45:56 | INFO |  Run ID   : text_export_12
+2026-02-18 12:45:56 | INFO |  Start    : 2026-02-18 12:45:56
+2026-02-18 12:45:56 | INFO |  Mode     : Retry
+2026-02-18 12:45:56 | INFO |  Source   : oracle
+2026-02-18 12:45:56 | INFO |  Host     : local
+2026-02-18 12:45:56 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:45:56 | INFO |  Out Dir  : data/export
+2026-02-18 12:45:56 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:45:56 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:45:56 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:45:56 | INFO | ============================================================
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | ============================================================
+2026-02-18 12:45:56 | INFO |  PIPELINE START
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | [1/4] EXPORT
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:45:56 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:45:56 | INFO | Parallel workers=1
+2026-02-18 12:45:56 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:45:56 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:45:56 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:56 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:56 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:45:56 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:56 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:45:56 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:45:56 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:56 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:56 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:45:56 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:45:56 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:45:56 | INFO | EXPORT stage end
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | LOAD stage start
+2026-02-18 12:45:56 | WARNING | No CSV files found in data\export\text_export
+2026-02-18 12:45:56 | INFO | LOAD stage end
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | [3/4] POSTWORK
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | POSTWORK stage start
+2026-02-18 12:45:56 | INFO | POSTWORK stage end
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | [4/4] REPORT
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | REPORT stage start
+2026-02-18 12:45:56 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:45:56 | INFO | REPORT excel export skipped
+2026-02-18 12:45:56 | INFO | REPORT stage end
+2026-02-18 12:45:56 | INFO | ------------------------------------------------------------
+2026-02-18 12:45:56 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:45:56 | INFO | 
+2026-02-18 12:45:56 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:45:56 | INFO | Job finished
+2026-02-18 12:46:03 | INFO | 
+2026-02-18 12:46:03 | INFO | ============================================================
+2026-02-18 12:46:03 | INFO |  JOB START
+2026-02-18 12:46:03 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:03 | INFO |  Job Name : text_export
+2026-02-18 12:46:03 | INFO |  Run ID   : text_export_13
+2026-02-18 12:46:03 | INFO |  Start    : 2026-02-18 12:46:03
+2026-02-18 12:46:03 | INFO |  Mode     : Retry
+2026-02-18 12:46:03 | INFO |  Source   : oracle
+2026-02-18 12:46:03 | INFO |  Host     : local
+2026-02-18 12:46:03 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:46:03 | INFO |  Out Dir  : data/export
+2026-02-18 12:46:03 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:46:03 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:46:03 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:46:03 | INFO | ============================================================
+2026-02-18 12:46:03 | INFO | 
+2026-02-18 12:46:03 | INFO | 
+2026-02-18 12:46:03 | INFO | ============================================================
+2026-02-18 12:46:03 | INFO |  PIPELINE START
+2026-02-18 12:46:03 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:03 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:46:03 | INFO | 
+2026-02-18 12:46:03 | INFO | [1/4] EXPORT
+2026-02-18 12:46:03 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:03 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:46:03 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:46:03 | INFO | Parallel workers=1
+2026-02-18 12:46:03 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:46:04 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:46:04 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:04 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:04 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:46:04 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:04 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:46:04 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:46:04 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:04 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:04 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:46:04 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:04 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:04 | INFO | EXPORT stage end
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:46:04 | INFO | 
+2026-02-18 12:46:04 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | LOAD stage start
+2026-02-18 12:46:04 | WARNING | No CSV files found in data\export\text_export
+2026-02-18 12:46:04 | INFO | LOAD stage end
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:46:04 | INFO | 
+2026-02-18 12:46:04 | INFO | [3/4] POSTWORK
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | POSTWORK stage start
+2026-02-18 12:46:04 | INFO | POSTWORK stage end
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:46:04 | INFO | 
+2026-02-18 12:46:04 | INFO | [4/4] REPORT
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | REPORT stage start
+2026-02-18 12:46:04 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:46:04 | INFO | REPORT excel export skipped
+2026-02-18 12:46:04 | INFO | REPORT stage end
+2026-02-18 12:46:04 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:04 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:46:04 | INFO | 
+2026-02-18 12:46:04 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:46:04 | INFO | Job finished
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | ============================================================
+2026-02-18 12:46:17 | INFO |  JOB START
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO |  Job Name : text_export
+2026-02-18 12:46:17 | INFO |  Run ID   : text_export_14
+2026-02-18 12:46:17 | INFO |  Start    : 2026-02-18 12:46:17
+2026-02-18 12:46:17 | INFO |  Mode     : Retry
+2026-02-18 12:46:17 | INFO |  Source   : oracle
+2026-02-18 12:46:17 | INFO |  Host     : local
+2026-02-18 12:46:17 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:46:17 | INFO |  Out Dir  : data/export
+2026-02-18 12:46:17 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:46:17 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:46:17 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:46:17 | INFO | ============================================================
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | ============================================================
+2026-02-18 12:46:17 | INFO |  PIPELINE START
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | [1/4] EXPORT
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:46:17 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:46:17 | INFO | Parallel workers=1
+2026-02-18 12:46:17 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:46:17 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:46:17 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:17 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:17 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:46:17 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:17 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:46:17 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:46:17 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:17 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:17 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:46:17 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:46:17 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:46:17 | INFO | EXPORT stage end
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | LOAD stage start
+2026-02-18 12:46:17 | WARNING | No CSV files found in data\export\text_export
+2026-02-18 12:46:17 | INFO | LOAD stage end
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | [2/4] LOAD_LOCAL DONE (0.00s)
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | [3/4] POSTWORK
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | POSTWORK stage start
+2026-02-18 12:46:17 | INFO | POSTWORK stage end
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | [4/4] REPORT
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | REPORT stage start
+2026-02-18 12:46:17 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:46:17 | INFO | REPORT excel export skipped
+2026-02-18 12:46:17 | INFO | REPORT stage end
+2026-02-18 12:46:17 | INFO | ------------------------------------------------------------
+2026-02-18 12:46:17 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:46:17 | INFO | 
+2026-02-18 12:46:17 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:46:17 | INFO | Job finished
+2026-02-18 12:47:42 | INFO | 
+2026-02-18 12:47:42 | INFO | ============================================================
+2026-02-18 12:47:42 | INFO |  JOB START
+2026-02-18 12:47:42 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:42 | INFO |  Job Name : text_export
+2026-02-18 12:47:42 | INFO |  Run ID   : text_export_15
+2026-02-18 12:47:42 | INFO |  Start    : 2026-02-18 12:47:42
+2026-02-18 12:47:42 | INFO |  Mode     : Retry
+2026-02-18 12:47:42 | INFO |  Source   : oracle
+2026-02-18 12:47:42 | INFO |  Host     : local
+2026-02-18 12:47:42 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:47:42 | INFO |  Out Dir  : data/export
+2026-02-18 12:47:42 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:47:42 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:47:42 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:47:42 | INFO | ============================================================
+2026-02-18 12:47:42 | INFO | 
+2026-02-18 12:47:42 | INFO | 
+2026-02-18 12:47:42 | INFO | ============================================================
+2026-02-18 12:47:42 | INFO |  PIPELINE START
+2026-02-18 12:47:42 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:42 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:47:42 | INFO | 
+2026-02-18 12:47:42 | INFO | [1/4] EXPORT
+2026-02-18 12:47:42 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:42 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:47:42 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:47:42 | INFO | Parallel workers=1
+2026-02-18 12:47:42 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:47:42 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:47:42 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:42 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:47:42 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:47:42 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:42 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:47:42 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:47:42 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:42 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:47:42 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:47:42 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:42 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:47:42 | INFO | EXPORT stage end
+2026-02-18 12:47:42 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:42 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:47:42 | INFO | 
+2026-02-18 12:47:42 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:47:42 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:42 | INFO | LOAD stage start
+2026-02-18 12:47:42 | INFO | LOAD target type=duckdb | csv_count=4
+2026-02-18 12:47:43 | INFO | LOAD [1/4] | table=01_a1 | file=01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:44 | INFO | Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-02-18 12:47:44 | INFO | NumExpr defaulting to 16 threads.
+2026-02-18 12:47:45 | INFO | LOAD done | table=01_a1 rows=0 elapsed=1.96s
+2026-02-18 12:47:45 | INFO | LOAD [2/4] | table=02_a2 | file=02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:45 | INFO | LOAD done | table=02_a2 rows=0 elapsed=0.01s
+2026-02-18 12:47:45 | INFO | LOAD [3/4] | table=03_a3 | file=03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:45 | INFO | LOAD done | table=03_a3 rows=0 elapsed=0.01s
+2026-02-18 12:47:45 | INFO | LOAD [4/4] | table=04_a4y | file=04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:47:45 | INFO | LOAD done | table=04_a4y rows=2 elapsed=0.01s
+2026-02-18 12:47:45 | INFO | LOAD summary | loaded=4 skipped=0 failed=0
+2026-02-18 12:47:45 | INFO | LOAD stage end
+2026-02-18 12:47:45 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:45 | INFO | [2/4] LOAD_LOCAL DONE (2.23s)
+2026-02-18 12:47:45 | INFO | 
+2026-02-18 12:47:45 | INFO | [3/4] POSTWORK
+2026-02-18 12:47:45 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:45 | INFO | POSTWORK stage start
+2026-02-18 12:47:45 | INFO | POSTWORK stage end
+2026-02-18 12:47:45 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:45 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:47:45 | INFO | 
+2026-02-18 12:47:45 | INFO | [4/4] REPORT
+2026-02-18 12:47:45 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:45 | INFO | REPORT stage start
+2026-02-18 12:47:45 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:47:45 | INFO | REPORT excel export skipped
+2026-02-18 12:47:45 | INFO | REPORT stage end
+2026-02-18 12:47:45 | INFO | ------------------------------------------------------------
+2026-02-18 12:47:45 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:47:45 | INFO | 
+2026-02-18 12:47:45 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:47:45 | INFO | Job finished
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | ============================================================
+2026-02-18 12:48:13 | INFO |  JOB START
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO |  Job Name : text_export
+2026-02-18 12:48:13 | INFO |  Run ID   : text_export_16
+2026-02-18 12:48:13 | INFO |  Start    : 2026-02-18 12:48:13
+2026-02-18 12:48:13 | INFO |  Mode     : Retry
+2026-02-18 12:48:13 | INFO |  Source   : oracle
+2026-02-18 12:48:13 | INFO |  Host     : local
+2026-02-18 12:48:13 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:48:13 | INFO |  Out Dir  : data/export
+2026-02-18 12:48:13 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:48:13 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:48:13 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:48:13 | INFO | ============================================================
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | ============================================================
+2026-02-18 12:48:13 | INFO |  PIPELINE START
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | [1/4] EXPORT
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:48:13 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:48:13 | INFO | Parallel workers=1
+2026-02-18 12:48:13 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:48:13 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:48:13 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:48:13 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:48:13 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:48:13 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:48:13 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:48:13 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:48:13 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.00s
+2026-02-18 12:48:13 | INFO | EXPORT stage end
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | [1/4] EXPORT DONE (0.11s)
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | LOAD stage start
+2026-02-18 12:48:13 | INFO | LOAD target type=duckdb | csv_count=4
+2026-02-18 12:48:13 | INFO | LOAD [1/4] | table=01_a1 | file=01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-02-18 12:48:13 | INFO | NumExpr defaulting to 16 threads.
+2026-02-18 12:48:13 | INFO | LOAD done | table=01_a1 rows=0 elapsed=0.35s
+2026-02-18 12:48:13 | INFO | LOAD [2/4] | table=02_a2 | file=02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | LOAD done | table=02_a2 rows=0 elapsed=0.01s
+2026-02-18 12:48:13 | INFO | LOAD [3/4] | table=03_a3 | file=03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | LOAD done | table=03_a3 rows=0 elapsed=0.01s
+2026-02-18 12:48:13 | INFO | LOAD [4/4] | table=04_a4y | file=04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:48:13 | INFO | LOAD done | table=04_a4y rows=4 elapsed=0.01s
+2026-02-18 12:48:13 | INFO | LOAD summary | loaded=4 skipped=0 failed=0
+2026-02-18 12:48:13 | INFO | LOAD stage end
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | [2/4] LOAD_LOCAL DONE (0.49s)
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | [3/4] POSTWORK
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | POSTWORK stage start
+2026-02-18 12:48:13 | INFO | POSTWORK stage end
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | [4/4] REPORT
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | REPORT stage start
+2026-02-18 12:48:13 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:48:13 | INFO | REPORT excel export skipped
+2026-02-18 12:48:13 | INFO | REPORT stage end
+2026-02-18 12:48:13 | INFO | ------------------------------------------------------------
+2026-02-18 12:48:13 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:48:13 | INFO | 
+2026-02-18 12:48:13 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:48:13 | INFO | Job finished
+2026-02-18 12:49:06 | INFO | 
+2026-02-18 12:49:06 | INFO | ============================================================
+2026-02-18 12:49:06 | INFO |  JOB START
+2026-02-18 12:49:06 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:06 | INFO |  Job Name : text_export
+2026-02-18 12:49:06 | INFO |  Run ID   : text_export_17
+2026-02-18 12:49:06 | INFO |  Start    : 2026-02-18 12:49:06
+2026-02-18 12:49:06 | INFO |  Mode     : Retry
+2026-02-18 12:49:06 | INFO |  Source   : oracle
+2026-02-18 12:49:06 | INFO |  Host     : local
+2026-02-18 12:49:06 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:49:06 | INFO |  Out Dir  : data/export
+2026-02-18 12:49:06 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:49:06 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:49:06 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:49:06 | INFO | ============================================================
+2026-02-18 12:49:06 | INFO | 
+2026-02-18 12:49:06 | INFO | 
+2026-02-18 12:49:06 | INFO | ============================================================
+2026-02-18 12:49:06 | INFO |  PIPELINE START
+2026-02-18 12:49:06 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:06 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:49:06 | INFO | 
+2026-02-18 12:49:06 | INFO | [1/4] EXPORT
+2026-02-18 12:49:06 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:06 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:49:06 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:49:06 | INFO | Parallel workers=1
+2026-02-18 12:49:06 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:49:06 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:49:06 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:06 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.00s
+2026-02-18 12:49:06 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:49:06 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:06 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:49:06 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:49:06 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:06 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.01s
+2026-02-18 12:49:06 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:49:06 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:06 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.01s
+2026-02-18 12:49:06 | INFO | EXPORT stage end
+2026-02-18 12:49:06 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:06 | INFO | [1/4] EXPORT DONE (0.12s)
+2026-02-18 12:49:06 | INFO | 
+2026-02-18 12:49:06 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:49:06 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:06 | INFO | LOAD stage start
+2026-02-18 12:49:06 | INFO | LOAD target type=duckdb | csv_count=4
+2026-02-18 12:49:06 | INFO | LOAD [1/4] | table=01_a1 | file=01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:07 | INFO | Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-02-18 12:49:07 | INFO | NumExpr defaulting to 16 threads.
+2026-02-18 12:49:07 | INFO | LOAD done | table=01_a1 rows=0 elapsed=0.34s
+2026-02-18 12:49:07 | INFO | LOAD [2/4] | table=02_a2 | file=02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:07 | INFO | LOAD done | table=02_a2 rows=0 elapsed=0.01s
+2026-02-18 12:49:07 | INFO | LOAD [3/4] | table=03_a3 | file=03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:07 | INFO | LOAD done | table=03_a3 rows=0 elapsed=0.01s
+2026-02-18 12:49:07 | INFO | LOAD [4/4] | table=04_a4y | file=04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:49:07 | INFO | LOAD done | table=04_a4y rows=6 elapsed=0.01s
+2026-02-18 12:49:07 | INFO | LOAD summary | loaded=4 skipped=0 failed=0
+2026-02-18 12:49:07 | INFO | LOAD stage end
+2026-02-18 12:49:07 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:07 | INFO | [2/4] LOAD_LOCAL DONE (0.48s)
+2026-02-18 12:49:07 | INFO | 
+2026-02-18 12:49:07 | INFO | [3/4] POSTWORK
+2026-02-18 12:49:07 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:07 | INFO | POSTWORK stage start
+2026-02-18 12:49:07 | INFO | POSTWORK stage end
+2026-02-18 12:49:07 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:07 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:49:07 | INFO | 
+2026-02-18 12:49:07 | INFO | [4/4] REPORT
+2026-02-18 12:49:07 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:07 | INFO | REPORT stage start
+2026-02-18 12:49:07 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:49:07 | INFO | REPORT excel export skipped
+2026-02-18 12:49:07 | INFO | REPORT stage end
+2026-02-18 12:49:07 | INFO | ------------------------------------------------------------
+2026-02-18 12:49:07 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:49:07 | INFO | 
+2026-02-18 12:49:07 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:49:07 | INFO | Job finished
+2026-02-18 12:58:25 | INFO | 
+2026-02-18 12:58:25 | INFO | ============================================================
+2026-02-18 12:58:25 | INFO |  JOB START
+2026-02-18 12:58:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:25 | INFO |  Job Name : text_export
+2026-02-18 12:58:25 | INFO |  Run ID   : text_export_18
+2026-02-18 12:58:25 | INFO |  Start    : 2026-02-18 12:58:25
+2026-02-18 12:58:25 | INFO |  Mode     : Retry
+2026-02-18 12:58:25 | INFO |  Source   : oracle
+2026-02-18 12:58:25 | INFO |  Host     : local
+2026-02-18 12:58:25 | INFO |  SQL Dir  : sql/export
+2026-02-18 12:58:25 | INFO |  Out Dir  : data/export
+2026-02-18 12:58:25 | INFO |  Params   : clsYymm=202003, clsYymm_bf=200910
+2026-02-18 12:58:25 | INFO |  WORK Dir : C:\work\batch_runner_v1.1
+2026-02-18 12:58:25 | INFO |  Log file : C:\work\batch_runner_v1.1\logs\run_20260218.log
+2026-02-18 12:58:25 | INFO | ============================================================
+2026-02-18 12:58:25 | INFO | 
+2026-02-18 12:58:25 | INFO | 
+2026-02-18 12:58:25 | INFO | ============================================================
+2026-02-18 12:58:25 | INFO |  PIPELINE START
+2026-02-18 12:58:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:25 | INFO | Stages total=4 | ['export', 'load_local', 'postwork', 'report']
+2026-02-18 12:58:25 | INFO | 
+2026-02-18 12:58:25 | INFO | [1/4] EXPORT
+2026-02-18 12:58:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:25 | INFO | Param expand | 202003 -> 1 value
+2026-02-18 12:58:25 | INFO | Param expand | 200910 -> 1 value
+2026-02-18 12:58:25 | INFO | Parallel workers=1
+2026-02-18 12:58:25 | INFO | Oracle client initialized (thick) | lib=C:\Users\thrus\Downloads\WINDOWS.X64_213000_db_home1\bin
+2026-02-18 12:58:25 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT start [1/4] param[1/1]
+2026-02-18 12:58:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:25 | INFO | [01_a1|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.01s
+2026-02-18 12:58:25 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT start [2/4] param[1/1]
+2026-02-18 12:58:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:25 | INFO | [02_a2|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.02s
+2026-02-18 12:58:25 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT start [3/4] param[1/1]
+2026-02-18 12:58:25 | INFO | CSV export completed | rows=0 file=data\export\text_export\03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:25 | INFO | [03_a3|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=0 size=0.00MB elapsed=0.01s
+2026-02-18 12:58:25 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT start [4/4] param[1/1]
+2026-02-18 12:58:25 | INFO | CSV export completed | rows=2 file=data\export\text_export\04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:25 | INFO | [04_a4y|clsYymm=202003 clsYymm_bf=200910] EXPORT done rows=2 size=0.00MB elapsed=0.01s
+2026-02-18 12:58:25 | INFO | EXPORT stage end
+2026-02-18 12:58:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:25 | INFO | [1/4] EXPORT DONE (0.13s)
+2026-02-18 12:58:25 | INFO | 
+2026-02-18 12:58:25 | INFO | [2/4] LOAD_LOCAL
+2026-02-18 12:58:25 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:25 | INFO | LOAD stage start
+2026-02-18 12:58:25 | INFO | LOAD target type=duckdb | csv_count=4
+2026-02-18 12:58:25 | INFO | LOAD [1/4] | table=01_a1 | file=01_a1__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:26 | INFO | Note: NumExpr detected 24 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2026-02-18 12:58:26 | INFO | NumExpr defaulting to 16 threads.
+2026-02-18 12:58:26 | INFO | LOAD done | table=01_a1 rows=0 elapsed=0.33s
+2026-02-18 12:58:26 | INFO | LOAD [2/4] | table=02_a2 | file=02_a2__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:26 | INFO | LOAD done | table=02_a2 rows=0 elapsed=0.01s
+2026-02-18 12:58:26 | INFO | LOAD [3/4] | table=03_a3 | file=03_a3__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:26 | INFO | LOAD done | table=03_a3 rows=0 elapsed=0.01s
+2026-02-18 12:58:26 | INFO | LOAD [4/4] | table=04_a4y | file=04_a4y__local__clsYymm_202003__clsYymm_bf_200910.csv.gz
+2026-02-18 12:58:26 | INFO | LOAD done | table=04_a4y rows=8 elapsed=0.01s
+2026-02-18 12:58:26 | INFO | LOAD summary | loaded=4 skipped=0 failed=0
+2026-02-18 12:58:26 | INFO | LOAD stage end
+2026-02-18 12:58:26 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:26 | INFO | [2/4] LOAD_LOCAL DONE (0.45s)
+2026-02-18 12:58:26 | INFO | 
+2026-02-18 12:58:26 | INFO | [3/4] POSTWORK
+2026-02-18 12:58:26 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:26 | INFO | POSTWORK stage start
+2026-02-18 12:58:26 | INFO | POSTWORK stage end
+2026-02-18 12:58:26 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:26 | INFO | [3/4] POSTWORK DONE (0.00s)
+2026-02-18 12:58:26 | INFO | 
+2026-02-18 12:58:26 | INFO | [4/4] REPORT
+2026-02-18 12:58:26 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:26 | INFO | REPORT stage start
+2026-02-18 12:58:26 | INFO | REPORT csv export | sql_dir=sql/report/ out_dir=data/report/
+2026-02-18 12:58:26 | INFO | REPORT excel export skipped
+2026-02-18 12:58:26 | INFO | REPORT stage end
+2026-02-18 12:58:26 | INFO | ------------------------------------------------------------
+2026-02-18 12:58:26 | INFO | [4/4] REPORT DONE (0.00s)
+2026-02-18 12:58:26 | INFO | 
+2026-02-18 12:58:26 | INFO | ============== PIPELINE FINISHED ==============
+2026-02-18 12:58:26 | INFO | Job finished

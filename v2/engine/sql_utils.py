@@ -56,5 +56,18 @@ def extract_sqlname_from_csv(csv_path: Path) -> str:
     """
     csv 파일명 규칙: {sqlname}__{host}__{param}_{value}...
     여기서 sqlname은 첫 '__' 이전.
+
+    .csv.gz의 경우 Path.stem이 '파일명.csv'가 되므로
+    확장자를 직접 제거한 뒤 처리.
     """
-    return csv_path.stem.split("__", 1)[0]
+    name = csv_path.name  # ex) 01_a1__local__clsYymm_202003.csv.gz
+
+    # .csv.gz / .csv 둘 다 처리
+    if name.endswith(".csv.gz"):
+        stem = name[: -len(".csv.gz")]
+    elif name.endswith(".csv"):
+        stem = name[: -len(".csv")]
+    else:
+        stem = csv_path.stem
+
+    return stem.split("__", 1)[0]
