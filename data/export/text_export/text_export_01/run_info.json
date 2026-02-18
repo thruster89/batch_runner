@@ -1,11 +1,11 @@
 {
   "job_name": "text_export",
   "run_id": "text_export_01",
-  "start_time": "2026-02-16 14:24:32",
-  "mode": "run",
+  "start_time": "2026-02-18 12:21:12",
+  "mode": "plan",
   "params": {
-    "clsYymm": "202001:202512~Q",
-    "clsYymm_bf": "200910:200911"
+    "clsYymm": "202003",
+    "clsYymm_bf": "200910"
   },
   "host": "local"
 }
